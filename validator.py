@@ -59,9 +59,9 @@ SINGLETON.setResult(test())
 def test_exercises(exercise_names):
     is_all_as_expected = True
     for exercise_name in exercise_names:
-        default_filename = "%s-default.py" % exercise_name
+        default_filename = "%s_default.py" % exercise_name
         solution_filename = "%s.py" % exercise_name
-        sct_filename = "%s-sct.py" % exercise_name
+        sct_filename = "%s_sct.py" % exercise_name
 
         if (os.path.exists(default_filename)):
             is_all_as_expected &= try_code(default_filename, sct_filename, False)
