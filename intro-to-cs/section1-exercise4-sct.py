@@ -14,7 +14,10 @@ anything particularly interesting. You should probably have it
 print text to the console window to prove that your code is
 operating as you expect it to.'''
 
-return '''(Not really oops.) Python didn't seem to have any 
+if (not ('is_period_over' in globals())):
+    return '''(Not really oops.) Python didn't seem to have any
 problem the code you wrote, so check the console output to see
 if it's behaving as you expect. Continue to try other things
 (and to test them via print) until the end of the class period.'''
+
+return True

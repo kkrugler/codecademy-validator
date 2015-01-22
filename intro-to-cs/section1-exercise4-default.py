@@ -33,5 +33,3 @@ x = 1/0
 
 print """Three double quote marks are
 just as good."""
-
-is_period_over = True

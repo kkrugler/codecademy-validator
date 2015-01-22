@@ -50,6 +50,4 @@ class Codecademy:
     def prints(self):
         return self.messages
 
-global CC
-CC = Codecademy()
-
+SINGLETON = Codecademy()
