@@ -13,7 +13,7 @@ class Logger(object):
         return self.messages
 
 
-class codecademy:
+class Codecademy:
     def __init__(self):
         self.globals = {}
         self.code = ""
@@ -51,5 +51,5 @@ class codecademy:
         return self.messages
 
 global CC
-CC = codecademy()
+CC = Codecademy()
 
