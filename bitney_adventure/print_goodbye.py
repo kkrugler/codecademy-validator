@@ -1,11 +1,10 @@
 def print_goodbye():
-    # Level - 2
-
     global g_score
 
-    # TODO print goodbye text, along with the player's current score
+    # Print goodbye text, along with the player's current score
 
-    print "goodbye: ", g_score
+    print '''We're sad to see you go, so hurry back.
+Your total score was %d, by the way.''' % g_score
 
 #####################################################
 # WARNING! DO NOT MODIFY THE CODE BELOW THIS POINT! #

@@ -12,11 +12,15 @@ def print_room_description(room_name):
 
     # Print a comma-separated list of the room's items, if any.
     if (item_names):
-        items_text = "the room contains the following items: "
+        items_text = "The room contains the following items: "
         for item_name in item_names:
             items_text += (item_name + ", ")
         items_text = items_text[:-2] # remove that last comma & space
         print items_text
+
+#####################################################
+# WARNING! DO NOT MODIFY THE CODE BELOW THIS POINT! #
+#####################################################
 
 # rooms is a dictionary, where the key is the room name, and the value is a "room"
 # Each room is also a dictionary, where the key is one of several possible values
@@ -36,7 +40,7 @@ g_rooms = {"computer lab":
               "doors": {"south": "hallway"}},
          "hallway":
              {"description": "The hallway is filled with colorful murals. There are doors to the north and east",
-              "items": ["key"],
+              "items": ["key", "donut", "hamster"],
               "value": 0,
               "doors": {"north": "computer lab", "east": "lobby"}},
          "lobby":

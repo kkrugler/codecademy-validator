@@ -1,11 +1,19 @@
 def print_room_description(room_name):
-    # Level - 4
+    # Level - 5
 
     global g_rooms
 
-    # TODO print the room's description
+    # TODO print the room's description and list the items it currently
+    # contains, which means a loop that iterates over its item list,
+    # (which you retrieve from the "items" entry in the g_rooms
+    # dictionary), and then prints out the list. If the list contains
+    # no items, skip that part.
 
     print "room description"
+
+#####################################################
+# WARNING! DO NOT MODIFY THE CODE BELOW THIS POINT! #
+#####################################################
 
 # rooms is a dictionary, where the key is the room name, and the value is a "room"
 # Each room is also a dictionary, where the key is one of several possible values
@@ -25,7 +33,7 @@ g_rooms = {"computer lab":
               "doors": {"south": "hallway"}},
          "hallway":
              {"description": "The hallway is filled with colorful murals. There are doors to the north and east",
-              "items": ["key"],
+              "items": ["key", "donut", "hamster"],
               "value": 0,
               "doors": {"north": "computer lab", "east": "lobby"}},
          "lobby":
