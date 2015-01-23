@@ -58,19 +58,36 @@ SINGLETON.setResult(test())
 
 def test_exercises(exercise_names):
     is_all_as_expected = True
+    is_missing_some_support = False
     for exercise_name in exercise_names:
         default_filename = "%s_default.py" % exercise_name
         solution_filename = "%s.py" % exercise_name
         sct_filename = "%s_sct.py" % exercise_name
 
+        if (not os.path.exists(sct_filename)):
+            is_missing_some_support = True
+            print_test_result("Warning! No SCT exists yet for %s." % exercise_name, WARNING_COLOR)
+
+        if (not os.path.exists(solution_filename)):
+            is_missing_some_support = True
+            print_test_result("Warning! No solution exists yet.", WARNING_COLOR)
+        elif (os.path.exists(sct_filename)):
+            is_all_as_expected &= try_code(solution_filename, sct_filename)
+
+        if (not os.path.exists(sct_filename)):
+            sct_filename = "always_fails_sct.py"
+
         if (os.path.exists(default_filename)):
             is_all_as_expected &= try_code(default_filename, sct_filename, False)
 
-        is_all_as_expected &= try_code(solution_filename, sct_filename)
-
     print
+    if (is_missing_some_support):
+        print_test_result("Warning! More support required for full validation.", WARNING_COLOR)
     if (is_all_as_expected):
-        print_test_result("SUCCESS! Everything behaved as expected.", SUCCESS_COLOR)
+        if (is_missing_some_support):
+            print_test_result("However, everything tested behaved as expected.", SUCCESS_COLOR)
+        else:
+            print_test_result("SUCCESS! Everything behaved as expected.", SUCCESS_COLOR)
     else:
         print_test_result("AT LEAST ONE EXPECTATION WAS VIOLATED!", WARNING_COLOR)
     return is_all_as_expected
