@@ -11,4 +11,4 @@ def check_general_command(room_name, command):
     else:
         return False
 
-check_general_command("complement", "Mr. Schneider")
+check_general_command("complement", "hit Mr. Schneider")

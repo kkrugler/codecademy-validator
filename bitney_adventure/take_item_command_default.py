@@ -58,4 +58,4 @@ def get_item_name(action, command):
     else:
         return None
 
-take_item_command("computer lab", "notebook")
+take_item_command("computer lab", "take notebook")

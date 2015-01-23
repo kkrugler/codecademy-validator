@@ -25,4 +25,4 @@ g_score = 0
 def print_room_description(room_name):
     print "This is a fake description of the lovely %s!" % room_name
 
-move_to_room('computer lab')
+move_to_room("computer lab")

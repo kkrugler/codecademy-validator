@@ -26,21 +26,21 @@ def print_room_description(room_name):
 # a "locked": True attribute, and you have to unlock it first before you can go through
 # that door. Use your imagination.
 
-g_rooms = {"computer lab":
+g_rooms = {"Computer Lab":
              {"description": "The computer lab is filled with glowing screens and old chairs. There is a door to the south",
               "items": ["notebook"],
               "value": 5,
-              "doors": {"south": "hallway"}},
-         "hallway":
+              "doors": {"south": "Hallway"}},
+         "Hallway":
              {"description": "The hallway is filled with colorful murals. There are doors to the north and east",
               "items": ["key", "donut", "hamster"],
               "value": 0,
-              "doors": {"north": "computer lab", "east": "lobby"}},
-         "lobby":
+              "doors": {"north": "Computer Lab", "east": "Lobby"}},
+         "Lobby":
              {"description": "The lobby is a place where people go to chill. There is a door to the west",
               "items": [],
               "value": 2,
-              "doors": {"west": "hallway"}},
+              "doors": {"west": "Hallway"}},
 }
 
-print_room_description("hallway")
+print_room_description("Hallway")

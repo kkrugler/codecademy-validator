@@ -67,4 +67,4 @@ def player_has_item(item_name):
     # Return true if the user has the item, otherwise false.
     return g_player_items.count(item_name) > 0
 
-drop_item_command('computer lab', 'key')
+drop_item_command("computer lab", "drop key")
