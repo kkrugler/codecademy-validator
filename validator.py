@@ -70,7 +70,7 @@ def test_exercises(exercise_names):
 
         if (not os.path.exists(solution_filename)):
             is_missing_some_support = True
-            print_test_result("Warning! No solution exists yet.", WARNING_COLOR)
+            print_test_result("Warning! No solution exists yet for %s." % exercise_name, WARNING_COLOR)
         elif (os.path.exists(sct_filename)):
             is_all_as_expected &= try_code(solution_filename, sct_filename)
 
