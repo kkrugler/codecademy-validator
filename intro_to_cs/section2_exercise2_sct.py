@@ -12,7 +12,11 @@ about.'''
 if (error):
     return '''Your change introduced some other error.
 Check the output in the console to see if you can resolve it.
-Otherwise, just click the Reset button to start over.'''
+Otherwise, just click the Reset Code button to start over.'''
+
+if (len(printed_lines) < 1):
+    return '''Your program didn't display any text to the user.
+Click the Reset Code button and start over.'''
 
 if (printed_lines[-1] != "11"):
     return '''The final print statement didn't display the requested
@@ -28,4 +32,4 @@ for i in range(len(code_lines)):
             break
 
 return '''You modified or deleted the final print
-statement.  Click the Reset button and start over.'''
+statement.  Click the Reset Code button and start over.'''
