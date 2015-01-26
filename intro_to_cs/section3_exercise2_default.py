@@ -2,7 +2,7 @@
 # understanding of if/elif/else structures.  Three player
 # scores are tested and incremented according to the if/elif/else
 # statements below.  The players all start out with zero scores,
-# and the winner will be the one who ends up scoring 5.
+# and the winner will be the one who ends up scoring 5 or more.
 
 bob_score = 0
 jane_score = 0
@@ -131,10 +131,10 @@ sally_score = 0
 # Write a simple if/elif/else structure below that announces the
 # winner of the contest above by printing a message to the
 # console of the form "Sally won!" (but using correct name).
-# (Just print a simple String literal rather than using the
-# formatting operator.)   Make sure that your code would work
+# Just print a simple String literal rather than using the
+# formatting operator.   Make sure that your code would work
 # no matter who actually wins.  It's OK to have a bias for one
-# player if there's a tie.
+# player if two score 5 or more.
 
 
 
