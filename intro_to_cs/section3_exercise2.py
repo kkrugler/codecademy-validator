@@ -131,7 +131,7 @@ sally_score_prediction_4 = 2
 # Just print a simple String literal rather than using the
 # formatting operator.   Make sure that your code would work
 # no matter who actually wins.  It's OK to have a bias for one
-# player if two score 5 or more.
+# player if two players score 5 or more.
 
 if (bob_score > 4):
     print "Bob Won!"
@@ -142,7 +142,7 @@ else:
 
 # Make sure you try out all possible winners above by modifying
 # the player scores at the top of this section.  Once you're
-# confident that your code works properly, remove the those three
-# lines of code above (lines 137-139), and then click the
+# confident that your code works properly, remove those three
+# lines of code above (lines 127-129), and then click the
 # Save & Submit Code button one last time to finish the
 # exercise.

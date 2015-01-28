@@ -46,8 +46,8 @@ if (age < 20):
 
 # Testing for equality in most (but not all) programming
 # languages is done with a double equals sign, to distinguish it
-# from an assignment statement.  Here we don't want to assign
-# age to 20; we want to test whether age already equals 20.
+# from an assignment statement.  Here we DON'T want to ASSIGN
+# age to 20; we want to TEST whether age ALREADY equals 20.
 if (age == 20):
     true_condition_count = true_condition_count + 1
     print 'That condition looks a little strange to me.'
