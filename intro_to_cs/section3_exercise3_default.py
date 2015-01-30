@@ -189,9 +189,9 @@ else:
     print "Bob, Jane and Sally Tied!"
 
 # Make sure you try out all possible winners and all possible
-# combinations of winners (7 different cases) by modifying
-# the player scores at the top of this section.  Once you're
-# confident that your code works properly, remove those three
-# lines of code above (lines 169-171), and then click the
-# Save & Submit Code button one last time to finish the
-# exercise.
+# combinations of winners (7 different announcements) by
+# modifying the player scores at the top of this section.
+# Once you're confident that your code works properly, remove
+# those three lines of code above (lines 169-171), and then
+# click the Save & Submit Code button one last time to finish
+# this exercise.
