@@ -74,10 +74,8 @@ def test_exercises(exercise_names):
         elif (os.path.exists(sct_filename)):
             is_all_as_expected &= try_code(solution_filename, sct_filename)
 
-        if (not os.path.exists(sct_filename)):
-            sct_filename = "always_fails_sct.py"
-
-        if (os.path.exists(default_filename)):
+        if  (   os.path.exists(default_filename)
+            and os.path.exists(sct_filename)):
             is_all_as_expected &= try_code(default_filename, sct_filename, False)
 
     print
