@@ -1,4 +1,4 @@
-from older_files import runner
+import runner
 
 runner = runner.CC
 
