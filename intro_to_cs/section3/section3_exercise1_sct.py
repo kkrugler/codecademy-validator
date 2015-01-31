@@ -86,14 +86,16 @@ for line in printed_lines[printed_line_count:]:
     if (line.strip().startswith('More than')):
         return '''The code you added did end up printing "%s",
 but its condition should not have been true.''' % line
-    if (line.strip().startswith('Less than')):
+    if (line.strip().startswith('Fewer than')):
         if (user_printed_line):
             return '''The code you added ended up printing
-at least two lines that began with "Less than".'''
+at least two lines that began with "Fewer than".'''
         else:
             user_printed_line = line
+    elif (len(printed_lines) > (printed_line_count + 1)):
+        return '''The code you added printed the unexpected line "%s"''' % line
 
-result = check_text('Less than ten lines were printed (not including this one)',
+result = check_text('Fewer than ten lines were printed (not including this one)',
                     user_printed_line,
                     'printed line')
 if (result != True):

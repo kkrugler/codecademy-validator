@@ -82,11 +82,11 @@ if (true_condition_count > 4):
     print('More than four conditions were true')
 
 # Write another conditional statement below that prints out
-# "Less than ten lines were printed (not including this one)",
+# "Fewer than ten lines were printed (not including this one)",
 # but only if the value of the printed_line_count variable at
 # this point in the program is less than ten.
 # (Again, DO NOT increment EITHER variable, whether your
 # condition is true or not.)
 
 if (printed_line_count < 10):
-    print 'Less than ten lines were printed (not including this one)'
+    print 'Fewer than ten lines were printed (not including this one)'

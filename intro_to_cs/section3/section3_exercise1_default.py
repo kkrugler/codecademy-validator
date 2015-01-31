@@ -81,7 +81,7 @@ printed_line_count_prediction = 0
 
 
 # Write another conditional statement below that prints out
-# "Less than ten lines were printed (not including this one)",
+# "Fewer than ten lines were printed (not including this one)",
 # but only if the value of the printed_line_count variable at
 # this point in the program is less than ten.
 # (Again, DO NOT increment EITHER variable, whether your
