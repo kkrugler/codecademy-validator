@@ -14,31 +14,40 @@ so check your text over carefully.'''
         return '''Your %s was "%s" instead of "%s".%s''' % (desc, actual, expected, case_warning)
     return True
 
-def check_bool_prediction(expected, actual, name, line):
+def check_prediction(expected, name, line, prediction_pattern, no_match_msg):
+    actual = globals().get(name)
+    if (not (name in globals())):
+        return '''You seem to have modified the program somehow so that
+it no longer assigns %s to anything.
+Click the Reset Code button and start over.''' % name
     assignment_re = re.compile(r'^([^ \t=]+)[ \t]*=([^=].*)?$')
     assignment_match = assignment_re.match(line)
     if  (   (assignment_match)
         and (assignment_match.groups()[0] == name)):
-        prediction_re = re.compile(r'^[^ \t=]+[ \t]*=[ \t]*(True|False)[ \t]*(#.*)?$')
+        prediction_re = re.compile(prediction_pattern)
         if (not prediction_re.match(line)):
-            return '''You must assign %s to a single Boolean literal value.
-No "re-computing" your prediction!''' % name
+            return no_match_msg
         if (expected != actual):
             return '''Your %s value was incorrect.''' % name
     return True
 
-def check_int_prediction(expected, actual, name, line):
-    assignment_re = re.compile(r'^([^ \t=]+)[ \t]*=([^=].*)?$')
-    assignment_match = assignment_re.match(line)
-    if  (   (assignment_match)
-        and (assignment_match.groups()[0] == name)):
-        prediction_re = re.compile(r'^[^ \t=]+[ \t]*=[ \t]*\d+[ \t]*(#.*)?$')
-        if (not prediction_re.match(line)):
-            return '''You must assign %s to a single Integer literal value.
+def check_int_prediction(expected, name, line):
+    no_match_msg = '''You must assign %s to a single Integer literal value.
 No "re-computing" your prediction!''' % name
-        if (expected != actual):
-            return '''Your %s value was incorrect.''' % name
-    return True
+    return check_prediction(expected,
+                            name,
+                            line,
+                            r'^[^ \t=]+[ \t]*=[ \t]*\d+[ \t]*(#.*)?$',
+                            no_match_msg)
+
+def check_bool_prediction(expected, name, line):
+    no_match_msg = '''You must assign %s to a single Boolean literal value.
+No "re-computing" your prediction!''' % name
+    return check_prediction(expected,
+                            name,
+                            line,
+                            r'^[^ \t=]+[ \t]*=[ \t]*(True|False)[ \t]*(#.*)?$',
+                            no_match_msg)
 
 if (error):
     return """The program still contains at least one error.
@@ -55,13 +64,6 @@ if (len(printed_lines) < printed_line_count):
 it no longer prints everything it was originally designed to.
 Click the Reset Code button and start over.'''
 
-if  (   (not ('is_python_broken_prediction' in globals()))
-    or  (not ('true_condition_count_prediction' in globals()))
-    or  (not ('printed_line_count_prediction' in globals()))):
-    return '''You seem to have modified the program somehow so that
-it no longer assigns all the variables it is supposed to.
-Click the Reset Code button and start over.'''
-
 is_found_user_condition_area = False
 num_user_conditions = 0
 code_lines = code.splitlines()
@@ -69,19 +71,16 @@ line_number = 0
 for line in code_lines:
     line_number += 1
     result = check_bool_prediction(is_python_broken,
-                                   is_python_broken_prediction,
                                    'is_python_broken_prediction',
                                    line)
     if (result != True):
         return result
     result = check_int_prediction(  true_condition_count,
-                                    true_condition_count_prediction,
                                     'true_condition_count_prediction',
                                     line)
     if (result != True):
         return result
     result = check_int_prediction(  printed_line_count,
-                                    printed_line_count_prediction,
                                     'printed_line_count_prediction',
                                     line)
     if (result != True):

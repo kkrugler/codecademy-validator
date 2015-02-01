@@ -14,18 +14,32 @@ so check your text over carefully.'''
         return '''Your %s was "%s" instead of "%s".%s''' % (desc, actual, expected, case_warning)
     return True
 
-def check_int_prediction(expected, actual, name, line):
+def check_prediction(expected, name, line, prediction_pattern, no_match_msg):
+    actual = globals().get(name)
+    if (not (name in globals())):
+        return '''You seem to have modified the program somehow so that
+it no longer assigns %s to anything.
+Click the Reset Code button and start over.''' % name
     assignment_re = re.compile(r'^([^ \t=]+)[ \t]*=([^=].*)?$')
     assignment_match = assignment_re.match(line)
     if  (   (assignment_match)
         and (assignment_match.groups()[0] == name)):
-        prediction_re = re.compile(r'^[^ \t=]+[ \t]*=[ \t]*\d+[ \t]*(#.*)?$')
+        prediction_re = re.compile(prediction_pattern)
         if (not prediction_re.match(line)):
-            return '''You must assign %s to a single Integer literal value.
-No "re-computing" your prediction!''' % name
-    if (expected != actual):
-        return '''Your %s value was incorrect.''' % name
+            return no_match_msg
+        if (expected != actual):
+            return '''Your %s value was incorrect.''' % name
     return True
+
+
+def check_int_prediction(expected, name, line):
+    no_match_msg = '''You must assign %s to a single Integer literal value.
+No "re-computing" your prediction!''' % name
+    return check_prediction(expected,
+                            name,
+                            line,
+                            r'^[^ \t=]+[ \t]*=[ \t]*\d+[ \t]*(#.*)?$',
+                            no_match_msg)
 
 if (error):
     return """The program still contains at least one error.
@@ -43,13 +57,11 @@ line_number = 0
 for line in code_lines:
     line_number += 1
     result = check_int_prediction(quotient,
-                                  quotient_prediction,
                                   'quotient_prediction',
                                   line)
     if (result != True):
         return result
     result = check_int_prediction(remainder,
-                                  remainder_prediction,
                                   'remainder_prediction',
                                   line)
     if (result != True):
