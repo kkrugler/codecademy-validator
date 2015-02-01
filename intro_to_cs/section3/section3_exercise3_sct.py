@@ -2,18 +2,6 @@ import re
 
 printed_lines = CC.prints()
 
-def check_text(expected, actual, desc, last_char_desc=None):
-    if  (   (last_char_desc)
-        and (actual == expected[:-1])):
-        return '''It looks like you forgot the %s at the end of your %s.''' % (last_char_desc, desc)
-    case_warning = ''
-    if (actual.lower() == expected.lower()):
-        case_warning = ''' The difference is only a question of uppercase vs. lowercase,
-so check your text over carefully.'''
-    if (actual != expected):
-        return '''Your %s was "%s" instead of "%s".%s''' % (desc, actual, expected, case_warning)
-    return True
-
 if (error):
     return """You broke the code with your changes so that it is
 no longer valid Python syntax.  The cryptic error message to the

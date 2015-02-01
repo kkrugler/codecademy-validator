@@ -21,6 +21,8 @@ embedded in the comments until you've resolved the final one."""
 
 
 def check_text(expected, actual, desc, last_char_desc=None):
+    if (type(actual) != str):
+        return '''Your %s is not even a String.''' % desc
     if  (   (last_char_desc)
         and (actual == expected[:-1])):
         return '''It looks like you forgot the %s at the end of your %s.''' % (last_char_desc, desc)
@@ -57,7 +59,7 @@ No "re-computing" your prediction!''' % name
     return check_prediction(expected,
                             name,
                             line,
-                            r'^[^ \t=]+[ \t]*=[ \t]*\d+[ \t]*(#.*)?$',
+                            r'^[^ \t=]+[ \t]*=[ \t]*(\+|-)?\d+[ \t]*(#.*)?$',
                             no_match_msg)
 
 prediction = 4
@@ -66,6 +68,23 @@ prediction = 3
 assert (check_int_prediction(3, 'prediction', 'prediction = 3') == True)
 assert (check_int_prediction(3, 'prediction', 'prediction = cheat') != True)
 assert (check_int_prediction(3, 'prediction', 'prediction = (1+2)') != True)
+
+
+def check_float_prediction(expected, name, line):
+    no_match_msg = '''You must assign %s to a single Floating-point literal value.
+No "re-computing" your prediction!''' % name
+    return check_prediction(expected,
+                            name,
+                            line,
+                            r'^[^ \t=]+[ \t]*=[ \t]*(\+|-)?[0-9.eE]+[ \t]*(#.*)?$',
+                            no_match_msg)
+
+prediction = 4.0
+assert (check_float_prediction(3.0, 'prediction', 'prediction = 4.0') != True)
+prediction = 3.0
+assert (check_float_prediction(3.0, 'prediction', 'prediction = 3.0e0') == True)
+assert (check_float_prediction(3.0, 'prediction', 'prediction = cheat') != True)
+assert (check_float_prediction(3.0, 'prediction', 'prediction = (1+2)') != True)
 
 
 def check_bool_prediction(expected, name, line):

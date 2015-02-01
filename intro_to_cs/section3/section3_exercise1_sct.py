@@ -1,6 +1,8 @@
 printed_lines = CC.prints()
 
 def check_text(expected, actual, desc, last_char_desc=None):
+    if (type(actual) != str):
+        return '''Your %s is not even a String.''' % desc
     if  (   (last_char_desc)
         and (actual == expected[:-1])):
         return '''It looks like you forgot the %s at the end of your %s.''' % (last_char_desc, desc)
