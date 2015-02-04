@@ -50,8 +50,9 @@ don't you think?"""
 # In order to include the backslash character in the String you
 # send to the console, you have to "escape away" its special
 # meaning by preceding it with a second backslash character.
-# Replace each "x" in the following String literals with a
-# backslash character (\).
+# Modify each of the following two String literals so that a
+# backslash character (\) occupies the position of each "x" in
+# the console output.
 
 print "The backslash (\\) is Python's escape character."
 

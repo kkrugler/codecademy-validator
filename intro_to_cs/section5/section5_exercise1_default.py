@@ -44,8 +44,9 @@ print "Now is the time for all good men to come to the aid of their country, don
 # In order to include the backslash character in the String you
 # send to the console, you have to "escape away" its special
 # meaning by preceding it with a second backslash character.
-# Replace each "x" in the following String literals with a
-# backslash character (\).
+# Modify each of the following two String literals so that a
+# backslash character (\) occupies the position of each "x" in
+# the console output.
 
 print "The backslash (x) is Python's escape character."
 
