@@ -19,8 +19,13 @@ Check its construction over carefully to avoid this problem.''' % desc
     if (actual.lower() == expected.lower()):
         case_warning = ''' The difference is only a question of uppercase vs. lowercase,
 so check your text over carefully.'''
+
+    # Although the following error message is not always grammatically
+    # correct (since the first sentence doesn't end in a period),
+    # that period was confusing students, who assumed it was part
+    # of the expected string.
     if (actual != expected):
-        return '''Your %s was "%s" instead of "%s".%s''' % (desc, actual, expected, case_warning)
+        return '''Your %s was "%s" instead of "%s"%s''' % (desc, actual, expected, case_warning)
     return True
 
 if (error):
