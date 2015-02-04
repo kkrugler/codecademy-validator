@@ -6,6 +6,15 @@ def check_text(expected, actual, desc, last_char_desc=None):
     if  (   (last_char_desc)
         and (actual == expected[:-1])):
         return '''It looks like you forgot the %s at the end of your %s.''' % (last_char_desc, desc)
+    if (actual.find('  ') > 0):
+        return '''Your %s contains two spaces in a row.
+Check its construction over carefully to avoid this problem.''' % desc
+    if (actual.startswith(' ')):
+        return '''Your %s starts with a space.
+Check its construction over carefully to avoid this problem.''' % desc
+    if (actual.endswith(' ')):
+        return '''Your %s ends with a space.
+Check its construction over carefully to avoid this problem.''' % desc
     case_warning = ''
     if (actual.lower() == expected.lower()):
         case_warning = ''' The difference is only a question of uppercase vs. lowercase,
@@ -20,6 +29,21 @@ no longer valid Python syntax.  The cryptic error message to the
 right will identify the first line that Python didn't like.
 You can try to fix the error you introduced, or just click the
 Reset Code button and start over."""
+
+if (first_name != 'Kenneth'):
+    return '''You changed the value of first_name.
+Click the Reset button and instead improve the way that formal_name
+gets built from this and the other parts.'''
+
+if (middle_initial != 'W'):
+    return '''You changed the value of middle_initial.
+Click the Reset button and instead improve the way that formal_name
+gets built from this and the other parts.'''
+
+if (last_name != 'Krugler'):
+    return '''You changed the value of last_name.
+Click the Reset button and instead improve the way that formal_name
+gets built from this and the other parts.'''
 
 if (formal_name == 'KennethWKrugler'):
     return """The three parts of the formal name are jumbed

@@ -8,6 +8,15 @@ def check_text(expected, actual, desc, last_char_desc=None):
     if  (   (last_char_desc)
         and (actual == expected[:-1])):
         return '''It looks like you forgot the %s at the end of your %s.''' % (last_char_desc, desc)
+    if (actual.find('  ') > 0):
+        return '''Your %s contains two spaces in a row.
+Check its construction over carefully to avoid this problem.''' % desc
+    if (actual.startswith(' ')):
+        return '''Your %s starts with a space.
+Check its construction over carefully to avoid this problem.''' % desc
+    if (actual.endswith(' ')):
+        return '''Your %s ends with a space.
+Check its construction over carefully to avoid this problem.''' % desc
     case_warning = ''
     if (actual.lower() == expected.lower()):
         case_warning = ''' The difference is only a question of uppercase vs. lowercase,

@@ -6,6 +6,15 @@ def check_text(expected, actual, desc, last_char_desc=None):
     if  (   (last_char_desc)
         and (actual == expected[:-1])):
         return '''It looks like you forgot the %s at the end of your %s.''' % (last_char_desc, desc)
+    if (actual.find('  ') > 0):
+        return '''Your %s contains two spaces in a row.
+Check its construction over carefully to avoid this problem.''' % desc
+    if (actual.startswith(' ')):
+        return '''Your %s starts with a space.
+Check its construction over carefully to avoid this problem.''' % desc
+    if (actual.endswith(' ')):
+        return '''Your %s ends with a space.
+Check its construction over carefully to avoid this problem.''' % desc
     case_warning = ''
     if (actual.lower() == expected.lower()):
         case_warning = ''' The difference is only a question of uppercase vs. lowercase,
@@ -70,6 +79,10 @@ for line in lines:
         if (line.find('%') < 0):
             return '''You cheated on line %d.  Every print statement should
 use the formatting operator (%%) to build the console message.''' % line_number
+        if (line.find('+') > 0):
+            return '''You cheated on line %d.  Do not use the
+concatenation operator (+) to build the console message.
+Use only the formatting operator.''' % line_number
         if  (   (line.find('awesome') >= 0)
             and (line.find('occupation') < 0)):
             return '''You cheated on line %d.  Use the occupation variable
