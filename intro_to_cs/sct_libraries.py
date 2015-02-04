@@ -111,3 +111,21 @@ prediction = True
 assert (check_bool_prediction(True, 'prediction', 'prediction = True') == True)
 assert (check_bool_prediction(True, 'prediction', 'prediction = cheat') != True)
 assert (check_bool_prediction(True, 'prediction', 'prediction = (1 > 2)') != True)
+
+def check_str_prediction(expected, name, line):
+    no_match_msg = '''You must assign %s to a single String literal value.
+No "re-computing" your prediction!''' % name
+    return check_prediction(expected,
+                            name,
+                            line,
+                            r'^[^ \t=]+[ \t]*=[ \t]*(\'|")[^[\]:+%]+[ \t]*(#.*)?$',
+                            no_match_msg)
+
+prediction = 'miss'
+assert (check_str_prediction('target', 'prediction', 'prediction = "miss"') != True)
+prediction = 'target'
+assert (check_str_prediction('target', 'prediction', 'prediction = "target"') == True)
+assert (check_str_prediction('target', 'prediction', 'prediction = cheat') != True)
+assert (check_str_prediction('target', 'prediction', 'prediction = "target"[0:]') != True)
+assert (check_str_prediction('target', 'prediction', 'prediction = "tar" + "get"') != True)
+
