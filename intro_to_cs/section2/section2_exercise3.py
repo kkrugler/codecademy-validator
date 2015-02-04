@@ -1,9 +1,12 @@
+# DO NOT modify the following three assignment statements.
+
 first_name = 'Kenneth'
 middle_initial = 'W'
 last_name = 'Krugler'
 
 # The following assignment statement doesn't quite accomplish
-# what was obviously intended.
+# what was obviously intended, but could be improved by
+# concatenating two more pieces of text in between the names.
 
 formal_name = first_name + ' ' + middle_initial + '. ' + last_name
 
@@ -19,6 +22,6 @@ print 'His formal name is ' + formal_name
 # This print statement just sends the text to the console exactly
 # as it appears below.  Modify this statement so that it uses
 # concatenation to generate the output that was obviously
-# intended, but don't forget the period at the end.
+# intended, but don't forget the period AFTER the variable value.
 
 print 'The variable formal_name contains ' + formal_name + '.'

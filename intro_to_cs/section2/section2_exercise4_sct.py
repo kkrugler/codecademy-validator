@@ -30,6 +30,21 @@ right will identify the first line that Python didn't like.
 You can try to fix the error you introduced, or just click the
 Reset Code button and start over."""
 
+if (first_name != 'Kenneth'):
+    return '''You changed the value of first_name.
+Click the Reset button and instead improve the way that full_name
+and your print statements built from this and the other parts.'''
+
+if (last_name != 'Krugler'):
+    return '''You changed the value of last_name.
+Click the Reset button and instead improve the way that full_name
+and your print statements built from this and the other parts.'''
+
+if (occupation != 'programmer'):
+    return '''You changed the value of occupation.
+Click the Reset button and instead improve the way that full_name
+and your print statements built from this and the other parts.'''
+
 if (len(printed_lines) < 1):
     return '''Your program didn't display any text to the user.
 Click the Reset Code button and start over.'''

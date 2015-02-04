@@ -1,3 +1,5 @@
+# DO NOT modify the following three assignment statements.
+
 first_name = 'Kenneth'
 last_name = 'Krugler'
 occupation = 'programmer'
