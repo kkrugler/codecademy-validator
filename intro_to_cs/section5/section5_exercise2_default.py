@@ -51,6 +51,20 @@ substring_27_28_prediction = ''
 substring_21_27_prediction = ''
 long_substring_prediction = ''
 
+# Slicing syntax also allows you to omit either the start or the
+# end position (as long as you still include the colon).
+# Again, predict the value of each substring that results.
+# Again, DO NOT modify ANYTHING except for the assignments to the
+# three prediction Strings.
+
+substring_to_6 = my_string[:6]
+substring_from_11 = my_string[11:]
+substring_colon = my_string[:]
+
+substring_to_6_prediction = ''
+substring_from_11_prediction = ''
+substring_colon_prediction = ''
+
 # In addition to single-character Strings, you can even create
 # an empty String.  Predict the length of the empty String by
 # changing the assignment to len_15_15_prediction below.

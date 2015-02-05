@@ -109,6 +109,21 @@ for line in code_lines:
                                   line)
     if (result != True):
         return result
+    result = check_str_prediction(substring_to_6,
+                                  'substring_to_6_prediction',
+                                  line)
+    if (result != True):
+        return result
+    result = check_str_prediction(substring_from_11,
+                                  'substring_from_11_prediction',
+                                  line)
+    if (result != True):
+        return result
+    result = check_str_prediction(substring_colon,
+                                  'substring_colon_prediction',
+                                  line)
+    if (result != True):
+        return result
     result = check_int_prediction(len_15_15,
                                   'len_15_15_prediction',
                                   line)

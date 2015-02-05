@@ -49,6 +49,10 @@ so check your text over carefully.'''
     return True
 
 
+# TODO Maybe pass both name of variable and expected value in,
+# make sure user hasn't changed the value of the variable,
+# then add "_prediction" suffix and continue with the rest of
+# the validation?
 def check_prediction(expected, name, line, prediction_pattern, no_match_msg):
     actual = globals().get(name)
     if (not (name in globals())):
