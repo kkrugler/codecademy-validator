@@ -103,13 +103,26 @@ use the formatting operator (%%) to build the console message.''' % line_number
             return '''You cheated on line %d.  Do not use the
 concatenation operator (+) to build the console message.
 Use only the formatting operator.''' % line_number
-        if  (   (line.find('awesome') >= 0)
-            and (line.find('occupation') < 0)):
-            return '''You cheated on line %d.  Use the occupation variable
-to build the console message.''' % line_number
+        if (line.find('His name') > 0):
+            if (line.find('first_name') < 0):
+                return '''You cheated on line %d.  Use the first_name
+variable to build the message.''' % line_number
+        if (line.find('awesome') > 0):
+            if (line.find('full_name') < 0):
+                return '''You cheated on line %d.  Use the full_name
+variable to build the message.''' % line_number
+            if (line.find('occupation') < 0):
+                return '''You cheated on line %d.  Use the occupation
+variable to build the console message.''' % line_number
     if line.startswith('full_name'):
         if (line.find('%') < 0):
             return '''You cheated on line %d.  Use the formatting
 operator (%%) to build the value of full_name.''' % line_number
+        if (line.find('Kenneth') > 0):
+            return '''You cheated on line %d.  Use the first_name
+variable to build the value of full_name.''' % line_number
+        if (line.find('Krugler') > 0):
+            return '''You cheated on line %d.  Use the last_name
+variable to build the value of full_name.''' % line_number
 
 return True

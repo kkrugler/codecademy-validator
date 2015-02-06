@@ -100,17 +100,27 @@ line_number = 0
 for line in lines:
     line_number += 1
     line = line.strip()
+    if (line.startswith('formal_name')):
+        if (line.find('+') < 0):
+            return '''You cheated on line %d.  Use the concatenation
+operator (+) to build the value of formal_name.''' % line_number
+        if (line.find('Kenneth') > 0):
+            return '''You cheated on line %d.  Use the first_name
+variable to build the value of formal_name.''' % line_number
+        if (line.find('W') > 0):
+            return '''You cheated on line %d.  Use the middle_initial
+variable to build the value of formal_name.''' % line_number
+        if (line.find('Krugler') > 0):
+            return '''You cheated on line %d.  Use the last_name
+variable to build the value of formal_name.''' % line_number
     if line.startswith('print'):
         if (line.find('+') < 0):
             return '''You cheated on line %d.  Every print statement should
 use the concatenation operator (+) to build the console message.''' % line_number
-        if  (   (line.find('contains') >= 0)
-            and (line.find('formal_name') < 0)):
+        if  (   (line.find('contains') > 0)
+            and (   (line.find('Kenneth') > 0)
+                or  (line.find('first_name') > 0))):
             return '''You cheated on line %d.  Use the formal_name variable
 to build the console message.''' % line_number
-    if line.startswith('formal_name'):
-        if (line.find('+') < 0):
-            return '''You cheated on line %d.  Use the formatting
-operator (+) to build the value of formal_name.''' % line_number
 
 return True
