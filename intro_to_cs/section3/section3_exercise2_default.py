@@ -130,7 +130,7 @@ sally_score = 0
 
 # Write a simple if/elif/else structure below that announces the
 # winner of the contest above by printing a message to the
-# console of the form "Sally won!" (but using correct name).
+# console of the form "Sally Won!" (but using correct name).
 # Just print a simple String literal rather than using the
 # formatting operator.   Make sure that your code would work
 # no matter who actually wins.  It's OK to have a bias for one

@@ -2,6 +2,8 @@ printed_lines = CC.prints()
 
 def check_text(expected, actual, desc, last_char_desc=None):
     if (type(actual) != str):
+        print actual
+        print type(actual)
         return '''Your %s is not even a String.''' % desc
     if  (   (last_char_desc)
         and (actual == expected[:-1])):
@@ -99,22 +101,26 @@ statements to the program. Click the Reset Code button and start over.'''
 
 user_printed_line = None
 for line in printed_lines[printed_line_count:]:
-    if (line.strip().startswith('More than')):
+    if (line.strip().lower().startswith('more than')):
         return '''The code you added did end up printing "%s",
 but its condition should not have been true.''' % line
-    if (line.strip().startswith('Fewer than')):
+    elif (line.strip().lower().startswith('fewer than')):
         if (user_printed_line):
             return '''The code you added ended up printing
 at least two lines that began with "Fewer than".'''
         else:
             user_printed_line = line
-    elif (len(printed_lines) > (printed_line_count + 1)):
+    elif (len(printed_lines) > (printed_line_count)):
         return '''The code you added printed the unexpected line "%s"''' % line
 
-result = check_text('Fewer than ten lines were printed (not including this one)',
-                    user_printed_line,
-                    'printed line')
-if (result != True):
-    return result
+if (user_printed_line):
+    result = check_text('Fewer than ten lines were printed (not including this one)',
+                        user_printed_line,
+                        'printed line')
+    if (result != True):
+        return result
+else:
+    return '''The code you added didn't print anything that
+starts with "Fewer than".'''
 
 return True
