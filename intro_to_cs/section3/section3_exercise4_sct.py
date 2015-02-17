@@ -83,9 +83,17 @@ It looks like you must have changed the code that prints the
 result of calling get_announcement(). Click the Reset Code button,
 and start over being careful to change only the function definition
 of get_announcement() and the lines that assign the input scores.'''
-    return '''Modify the function definition of get_announcement()
+    if  (   (bob_score == 0)
+        and (jane_score == 0)
+        and (sally_score == 0)):
+        return '''Your smallest_value() function seems to be working
+properly. Now modify the function definition of get_announcement()
 as requested and test it to make sure it works properly when you
 set various combinations of player scores via the assignment
+statements that precede the function definition.'''
+    return '''Continue to test your get_announcement() function
+to make sure it works properly (check its console output)
+when you set various combinations of player scores via the assignment
 statements that precede the function definition. Once you're ready
 for the SCT to test all cases, just assign bob_score to 100 and
 then click the Save & Submit button.'''
