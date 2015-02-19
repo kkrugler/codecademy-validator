@@ -187,15 +187,11 @@ if (bob_score > jane_score):
 elif (jane_score > sally_score):
     if (jane_score > bob_score):
         print "Jane Won!"
-    elif (bob_score > jane_score):
-        print "Bob Won!"
     else:
         print "Bob and Jane Tied!"
 elif (sally_score > bob_score):
     if (sally_score > jane_score):
         print "Sally Won!"
-    elif (jane_score > sally_score):
-        print "Jane Won!"
     else:
         print "Jane and Sally Tied!"
 else:

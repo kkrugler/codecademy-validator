@@ -64,7 +64,7 @@ if (first_value > 99):
 
 bob_score = 100
 jane_score = 0
-sally_score = 0
+sally_score = 2
 
 # Modify the following relatively simple conditional structure by
 # replacing each of its first three return statements with a
@@ -93,17 +93,13 @@ def get_announcement(bob_score, jane_score, sally_score):
     elif (jane_score > sally_score):
         if (jane_score > bob_score):
             return "Jane Won!"
-        elif (bob_score > jane_score):
-            return "Bob Won!"
         else:
-            return "Bob and Jane Tied!"
+            return "Jane and Bob Tied!"
     elif (sally_score > bob_score):
         if (sally_score > jane_score):
             return "Sally Won!"
-        elif (jane_score > sally_score):
-            return "Jane Won!"
         else:
-            return "Jane and Sally Tied!"
+            return "Sally and Jane Tied!"
     else:
         return "Bob, Jane and Sally Tied!"
 
