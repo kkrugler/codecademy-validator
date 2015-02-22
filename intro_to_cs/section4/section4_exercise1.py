@@ -65,16 +65,16 @@ twenty_six = thirteen + thirteen
 
 # The formatting operator (%) presents an opportunity for more
 # explicit Python style.  In addition to the String placeholder
-# (%s), it also supports an Integer placeholder (%i).
+# (%s), it also supports an Integer placeholder (%i or %d).
 
 # The formatting in the first statement below is almost identical
 # to what was used to build the message String variable at the
 # very top of this program. However, this time the formatting
-# operator was told to replace the Integer placeholder (%i).
+# operator was told to replace the Integer placeholder (%d).
 # The difference is very subtle, but important.
 # Which of these two statements is going to run into trouble?
 
-print 'The variable thirteen has the value %i.' % thirteen
+print 'The variable thirteen has the value %d.' % thirteen
 print 'thirteen_string has the value %s.' % thirteen_string
 
 # Click the Save & Submit button to see how Python complains
@@ -93,5 +93,5 @@ print 'thirteen_string has the value %s.' % thirteen_string
 score = 10
 gender = 'Female'
 
-print 'I think scores less than %i are wimpy.' % 10
+print 'I think scores less than %d are wimpy.' % 10
 print '%s spiders are generally larger.' % gender

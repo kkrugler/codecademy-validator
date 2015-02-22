@@ -116,27 +116,27 @@ Click the Reset Code button and start over.'''
         return '''Your my_empty value was incorrect.'''
     if (line.find('my_int has') > 0):
         if (line.count('my_int') < 2):
-            return '''Your print statement on line %i should
+            return '''Your print statement on line %d should
 use the format operator and reference the variable my_int.''' % line_number
         if  (   (line.find('%i') < 0)
             and (line.find('%d') < 0)):
             return '''You could format your print statement on
-line %i in better style.''' % line_number
+line %d in better style.''' % line_number
     if  (   (line.find('my_float has') > 0)
         and (line.count('my_float') < 2)):
-        return '''Your print statement on line %i should
+        return '''Your print statement on line %d should
 use the format operator and reference the variable my_float.''' % line_number
     if  (   (line.find('my_string has') > 0)
         and (line.count('my_string') < 2)):
-        return '''Your print statement on line %i should
+        return '''Your print statement on line %d should
 use the format operator and reference the variable my_string.''' % line_number
     if  (   (line.find('is_yes has') > 0)
         and (line.count('is_yes') < 2)):
-        return '''Your print statement on line %i should
+        return '''Your print statement on line %d should
 use the format operator and reference the variable is_yes.''' % line_number
     if  (   (line.find('my_empty has') > 0)
         and (line.count('my_empty') < 2)):
-        return '''Your print statement on line %i should
+        return '''Your print statement on line %d should
 use the format operator and reference the variable my_empty.''' % line_number
 
 result = check_text('my_int has the value 42!',

@@ -110,25 +110,25 @@ for line in code_lines:
         if (line.startswith('if')):
             num_user_conditions += 1
             if (line.find('true_condition_count') >= 0):
-                return '''The condition you added on line %i
+                return '''The condition you added on line %d
 should use is_many_were_true instead.''' % line_number
                 if  (   (line_number == len(code_lines))
                     or  (not code_lines[line_number].startswith('    print'))):
-                    return '''The condition you added on line %i doesn't
+                    return '''The condition you added on line %d doesn't
 seem to be followed by a properly indented print statement. It might just be more
 complex than necessary, but it probably has a bug.''' % line_number
             elif (line.find('printed_line_count') >= 0):
-                return '''The condition you added on line %i
+                return '''The condition you added on line %d
 should use is_few_lines_printed instead.''' % line_number
             elif    (   (line.find('is_many_were_true') < 0)
                     and (line.find('is_few_lines_printed') < 0)):
-                return '''The condition you added on line %i doesn't
+                return '''The condition you added on line %d doesn't
 refer to is_many_were_true or is_few_lines_printed.''' % line_number
         elif    (   (   line.startswith('is_many_were_true')
                     or  line.startswith('is_few_lines_printed'))
                 and (   (line.find('True') > 0)
                     or  (line.find('False') > 0))):
-            return '''Your assignment on line %i would not work
+            return '''Your assignment on line %d would not work
 for all possible values of the two counters.''' % line_number
 
 if (not is_found_user_condition_area):

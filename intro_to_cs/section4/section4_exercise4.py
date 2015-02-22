@@ -30,7 +30,7 @@ my_empty = None
 # value of my_int, but do so in a way that wouldn't work if
 # my_int wasn't already the correct type.
 
-print 'my_int has the value %i!' % my_int
+print 'my_int has the value %d!' % my_int
 
 # Modify the print statement below so that it includes the
 # value of my_float, but make sure the value it prints includes

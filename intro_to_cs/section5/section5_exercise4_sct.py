@@ -103,7 +103,7 @@ for line in code_lines:
         if  (   (num_print_statements == 2)
             and (   (line.find('HOMEWORK') > 0)
                 or  (line.find('my_string.upper()') < 0))):
-            return '''You cheated on line %i. Call the upper() method
+            return '''You cheated on line %d. Call the upper() method
 of my_string and then print the result
 (all in a single statement).''' % line_number
 
@@ -111,7 +111,7 @@ of my_string and then print the result
         and (line.startswith('if'))
         and (   (line.find('my_string.endswith') < 0)
             or  (line.find('homework') < 0))):
-        return '''Your modification on line %i
+        return '''Your modification on line %d
 doesn't look right. It should test whether my_string ends with
 "homework".''' % line_number
 

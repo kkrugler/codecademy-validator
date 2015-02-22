@@ -92,7 +92,7 @@ for line in code_lines:
                 ==  (line.find("\\") > 0))):
             return '''The second instance in each pair should
 escape the apostrophe; the first should just use double quotes.
-Fix the print statement on line %i.''' % line_number
+Fix the print statement on line %d.''' % line_number
         print_number += 1
 
         if (line.find("'''") > 0):
@@ -105,14 +105,14 @@ Fix the print statement on line %i.''' % line_number
         if (line.rstrip().endswith('\\')):
             num_breaks += 1
         else:
-            return '''Line %i should end with the continuation
+            return '''Line %d should end with the continuation
 character.''' % line_number
 
     if  (   (print_number >= 7)
         and (print_number <= 8)
         and (len(line.strip()) > 0)
         and line.startswith(' ')):
-        return '''Line %i begins with an extra space character.''' % line_number
+        return '''Line %d begins with an extra space character.''' % line_number
 
 if (num_breaks != 3):
     return '''Your seventh print statement should be broken into

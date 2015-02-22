@@ -70,12 +70,12 @@ twenty_six = thirteen + thirteen_string
 # The formatting in the first statement below is almost identical
 # to what was used to build the message String variable at the
 # very top of this program. However, this time the formatting
-# operator was told to replace the Integer placeholder (%i).
+# operator was told to replace the Integer placeholder (%d).
 # The difference is very subtle, but important.
 # Which of these two statements is going to run into trouble?
 
-print 'The variable thirteen has the value %i.' % thirteen
-print 'thirteen_string has the value %i.' % thirteen_string
+print 'The variable thirteen has the value %d.' % thirteen
+print 'thirteen_string has the value %d.' % thirteen_string
 
 # Click the Save & Submit button to see how Python complains
 # about the code block above.  Read over the message in the
