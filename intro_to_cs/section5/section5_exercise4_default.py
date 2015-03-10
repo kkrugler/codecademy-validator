@@ -81,8 +81,9 @@ string_1 = my_string.replace('your', 'my')
 string_2 = my_string.replace(' ', '-')
 string_3 = my_string.replace(' ', '-')
 
-# Again, try to predict the value of the position variables by changing
-# the assignment to the associated prediction variables below.
+# Now try to predict the value of the three String variables by
+# changing the assignment to the associated prediction variables
+# below.
 
 string_1_prediction = ''
 string_2_prediction = ''
