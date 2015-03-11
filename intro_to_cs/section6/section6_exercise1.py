@@ -26,7 +26,7 @@ scores = (6, 2, 7, 5)
 def player_score_message(players, scores, i):
     return '%s scored %d.' % (players[i], scores[i])
 
-# For example, the following code describes Jane's score:
+# For example, the following code describes Bob's score:
 message_2 = player_score_message(players, scores, 1)
 
 # Predict the value of the message_2 variable above by assigning
