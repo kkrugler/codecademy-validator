@@ -121,11 +121,14 @@ and print the result (all in a single statement).''' % line_number
                 return result
 
     if  (   line.startswith('best_2_players')
-        and (line != 'best_2_players = best_3_players')
-        and (   (line.find('best_3_players[') < 0)
-            or  (line.find('(') > 0))):
-        return '''Your assignment statement on line %d should
-just take a slice of the best_3_players Tuple.''' % line_number
+        and (line != 'best_2_players = best_3_players')):
+        if (line.find('best_3_players[') < 0):
+            return '''Your assignment statement on line %d should
+take a slice of the best_3_players Tuple.''' % line_number
+        if (line.find('(') > 0):
+            return '''Your assignment statement on line %d should
+not require parentheses just take a slice of the best_3_players
+Tuple. Note that a slice of a Tuple is already a Tuple.''' % line_number
 
 if (len(best_3_players) == 0):
     return '''Assign best_3_players to a new Tuple containing
