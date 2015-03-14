@@ -26,6 +26,7 @@ g_exercise_names =  [   "section1/section1_exercise1",
                         "section5/section5_exercise4",
 
                         "section6/section6_exercise1",
-                        "section6/section6_exercise2"]
+                        "section6/section6_exercise2",
+                        "section6/section6_exercise3"]
 
 validator.test_exercises(g_exercise_names)
