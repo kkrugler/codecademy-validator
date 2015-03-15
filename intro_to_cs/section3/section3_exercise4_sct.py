@@ -1,5 +1,6 @@
 import re
 
+# TODO Figure out why this exercise passes with an empty file.
 printed_lines = CC.prints()
 
 def check_text(expected, actual, desc, last_char_desc=None):
