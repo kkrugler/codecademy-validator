@@ -2,9 +2,14 @@ import re
 
 printed_lines = CC.prints()
 
-def check_text(expected, actual, desc, last_char_desc=None):
+def check_text(expected, actual, desc, is_describe_expected=True):
+    last_char_desc = None
     if (type(actual) != str):
         return '''Your %s is not even a String.''' % desc
+    if (expected[-1] == '.'):
+        last_char_desc = 'period'
+    elif (expected[-1] == '!'):
+        last_char_desc = 'exclamation point'
     if  (   (last_char_desc)
         and (actual == expected[:-1])):
         return '''It looks like you forgot the %s at the end of your %s.''' % (last_char_desc, desc)
@@ -22,13 +27,16 @@ Check its construction over carefully to avoid this problem.''' % desc
         case_warning = ''' The difference is only a question of uppercase vs. lowercase,
 so check your text over carefully.'''
 
+    if (actual == expected):
+        return True
+
     # Although the following error message is not always grammatically
     # correct (since the first sentence doesn't end in a period),
     # that period was confusing students, who assumed it was part
     # of the expected string.
-    if (actual != expected):
+    if (is_describe_expected):
         return '''Your %s was "%s" instead of "%s"%s''' % (desc, actual, expected, case_warning)
-    return True
+    return '''Your %s was incorrect.''' % desc
 
 def check_prediction(expected, name, line, prediction_pattern, no_match_msg):
     actual = globals().get(name)
@@ -43,6 +51,8 @@ Click the Reset Code button and start over.''' % name
         prediction_re = re.compile(prediction_pattern)
         if (not prediction_re.match(line)):
             return no_match_msg
+        if (type(expected) == str):
+            return check_text(expected, actual, name, False)
         if (expected != actual):
             return '''Your %s value was incorrect.''' % name
     return True
@@ -134,8 +144,7 @@ announces the correct winner and score.'''
 
 result = check_text('Sally won with a score of 7.',
                     printed_lines[0],
-                    'announcement printed after the second loop',
-                    'period');
+                    'announcement printed after the second loop');
 if (result != True):
     return result
 

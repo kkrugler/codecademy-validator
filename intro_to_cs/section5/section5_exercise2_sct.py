@@ -15,6 +15,10 @@ Click the Reset Code button and start over.''' % name
         prediction_re = re.compile(prediction_pattern)
         if (not prediction_re.match(line)):
             return no_match_msg
+        ''' We don't want to check for spaces at start/end, etc.
+        if (type(expected) == str):
+            return check_text(expected, actual, name, False)
+        '''
         if (expected != actual):
             return '''Your %s value was incorrect.''' % name
     return True

@@ -1,8 +1,13 @@
 printed_lines = CC.prints()
 
-def check_text(expected, actual, desc, last_char_desc=None):
+def check_text(expected, actual, desc, is_describe_expected=True):
+    last_char_desc = None
     if (type(actual) != str):
         return '''Your %s is not even a String.''' % desc
+    if (expected[-1] == '.'):
+        last_char_desc = 'period'
+    elif (expected[-1] == '!'):
+        last_char_desc = 'exclamation point'
     if  (   (last_char_desc)
         and (actual == expected[:-1])):
         return '''It looks like you forgot the %s at the end of your %s.''' % (last_char_desc, desc)
@@ -20,13 +25,16 @@ Check its construction over carefully to avoid this problem.''' % desc
         case_warning = ''' The difference is only a question of uppercase vs. lowercase,
 so check your text over carefully.'''
 
+    if (actual == expected):
+        return True
+
     # Although the following error message is not always grammatically
     # correct (since the first sentence doesn't end in a period),
     # that period was confusing students, who assumed it was part
     # of the expected string.
-    if (actual != expected):
+    if (is_describe_expected):
         return '''Your %s was "%s" instead of "%s"%s''' % (desc, actual, expected, case_warning)
-    return True
+    return '''Your %s was incorrect.''' % desc
 
 if (error):
     return """You broke the code with your changes so that it is
@@ -61,8 +69,7 @@ click the Reset Code button to start again from scratch.'''
 
 result = check_text("His name is Kenneth.",
                     printed_lines[1],
-                    "second print statement",
-                    "period")
+                    "second print statement")
 if (result != True):
     return result
 
@@ -84,8 +91,7 @@ click the Reset Code button to start again from scratch.'''
 expected_line = "%s is an awesome programmer!" % expected_full_name
 result = check_text(expected_line,
                     printed_lines[2],
-                    "third print statement",
-                    "exclamation point")
+                    "third print statement")
 if (result != True):
     return result
 
