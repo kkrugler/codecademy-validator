@@ -61,7 +61,7 @@ so check your text over carefully.'''
 # make sure user hasn't changed the value of the variable,
 # then add "_prediction" suffix and continue with the rest of
 # the validation?
-def check_prediction(expected, name, line, prediction_pattern, no_match_msg):
+def check_prediction(expected, name, line, prediction_pattern, no_match_msg, section=None):
     actual = globals().get(name)
     if (not (name in globals())):
         return '''You seem to have modified the program somehow so that
@@ -77,18 +77,23 @@ Click the Reset Code button and start over.''' % name
         if (type(expected) == str):
             return check_text(expected, actual, name, False)
         if (expected != actual):
-            return '''Your %s value was incorrect.''' % name
+            if (section):
+                return '''One of the predictions in your %s set
+was incorrect.''' % section
+            else:
+                return '''Your %s was not correct.''' % name
     return True
 
 
-def check_int_prediction(expected, name, line):
+def check_int_prediction(expected, name, line, section=None):
     no_match_msg = '''You must assign %s to a single Integer literal value.
 No "re-computing" your prediction!''' % name
     return check_prediction(expected,
                             name,
                             line,
                             r'^[^ \t=]+[ \t]*=[ \t]*(\+|-)?\d+[ \t]*(#.*)?$',
-                            no_match_msg)
+                            no_match_msg,
+                            section)
 
 prediction = 4
 assert (check_int_prediction(3, 'prediction', 'prediction = 4') != True)
@@ -98,14 +103,15 @@ assert (check_int_prediction(3, 'prediction', 'prediction = cheat') != True)
 assert (check_int_prediction(3, 'prediction', 'prediction = (1+2)') != True)
 
 
-def check_float_prediction(expected, name, line):
+def check_float_prediction(expected, name, line, section=None):
     no_match_msg = '''You must assign %s to a single Floating-point literal value.
 No "re-computing" your prediction!''' % name
     return check_prediction(expected,
                             name,
                             line,
                             r'^[^ \t=]+[ \t]*=[ \t]*(\+|-)?[0-9.eE]+[ \t]*(#.*)?$',
-                            no_match_msg)
+                            no_match_msg,
+                            section)
 
 prediction = 4.0
 assert (check_float_prediction(3.0, 'prediction', 'prediction = 4.0') != True)
@@ -115,14 +121,15 @@ assert (check_float_prediction(3.0, 'prediction', 'prediction = cheat') != True)
 assert (check_float_prediction(3.0, 'prediction', 'prediction = (1+2)') != True)
 
 
-def check_bool_prediction(expected, name, line):
+def check_bool_prediction(expected, name, line, section=None):
     no_match_msg = '''You must assign %s to a single Boolean literal value.
 No "re-computing" your prediction!''' % name
     return check_prediction(expected,
                             name,
                             line,
                             r'^[^ \t=]+[ \t]*=[ \t]*(True|False)[ \t]*(#.*)?$',
-                            no_match_msg)
+                            no_match_msg,
+                            section)
 
 prediction = False
 assert (check_bool_prediction(True, 'prediction', 'prediction = False') != True)
@@ -131,14 +138,15 @@ assert (check_bool_prediction(True, 'prediction', 'prediction = True') == True)
 assert (check_bool_prediction(True, 'prediction', 'prediction = cheat') != True)
 assert (check_bool_prediction(True, 'prediction', 'prediction = (1 > 2)') != True)
 
-def check_str_prediction(expected, name, line):
+def check_str_prediction(expected, name, line, section=None):
     no_match_msg = '''You must assign %s to a single String literal value.
 No "re-computing" your prediction!''' % name
     return check_prediction(expected,
                             name,
                             line,
                             r'^[^ \t=]+[ \t]*=[ \t]*(\'|")[^[\]:+%]+[ \t]*(#.*)?$',
-                            no_match_msg)
+                            no_match_msg,
+                            section)
 
 prediction = 'miss'
 assert (check_str_prediction('target', 'prediction', 'prediction = "miss"') != True)
