@@ -15,7 +15,7 @@ room_a_prediction = ''
 
 # As long as there is at least one iteration, the control
 # variable will still have the last element in it after the loop
-# terminates.  Predict the value of the loop variable at this
+# terminates.  Predict the value of the control variable at this
 # point in the program by setting the prediction variable to
 # a Literal String below.
 room_prediction = ''
