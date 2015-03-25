@@ -117,6 +117,17 @@ for line in code_lines:
         if (result != True):
             return result
 
+    if  (   (line.find('winning_score') == 0)
+        and (line != "winning_score = 0")):
+        return '''You changed line %d.  Click the Reset Code
+button and start over.''' % line_number
+
+    if  (   (line.find('winner') == 0)
+        and (line != "winner = ''")):
+        return '''You changed line %d.  Click the Reset Code
+button and start over.''' % line_number
+
+
     if  (   (line.find('winner') >= 0)
         and (   (line.find('Sally') > 0)
             or  (line.find('[2]') > 0))):

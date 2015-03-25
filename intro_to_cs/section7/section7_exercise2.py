@@ -27,7 +27,8 @@ scores = [6, 2, 7, 5]
 
 # The following code finds the winning score in the scores List
 # and then tries to announce the winner and score, but it isn't
-# quite finished.  Add one line of code to resolve the problem.
+# quite finished.  Add one line of code to resolve the problem,
+# but DO NOT change the first two lines.
 winning_score = 0
 winner = ''
 for i in range(len(scores)):
