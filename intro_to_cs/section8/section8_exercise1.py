@@ -1,7 +1,8 @@
 # Just like in mathematics, the order of operation often makes a
-# difference in the value of an expression.  The first expression
-# lets operator precedence control the order of operation,
-# whereas the parentheses control it in the other two.
+# difference in the value of an expression.  For example, the
+# first expression below lets operator precedence control the
+# order of operation, whereas the parentheses control it in the
+# other two.
 result_1 = 8 - 4 / 2
 result_2 = (8 - 4) / 2
 result_3 = 8 - (4 / 2)
