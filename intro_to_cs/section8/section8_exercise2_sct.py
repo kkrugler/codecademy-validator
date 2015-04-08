@@ -190,12 +190,6 @@ if (num_nots_remaining == 4):
 definitions so that each still returns the same value for every
 input number, but without using the not operator, as directed.'''
 
-if (num_is_clear_winner_ifs == 3):
-    return '''Finally, modify the is_clear_winner() function
-definition so that it still returns the same value for every
-pair of input numbers, but uses only a single conditional
-structure to do so, as directed.'''
-
 def check_bool(expected, actual, desc):
     result = check_text(str(expected), str(actual), desc, True)
     if (result == True):
@@ -240,6 +234,12 @@ for score in range(-1, 7):
                             'is_clear_winner(%s, %s) result' % (score, other_score))
         if (result != True):
             return result
+
+if (num_is_clear_winner_ifs == 3):
+    return '''Finally, modify the is_clear_winner() function
+definition so that it still returns the same value for every
+pair of input numbers, but uses only a single conditional
+structure to do so, as directed.'''
 
 if (num_is_clear_winner_ifs > 1):
     return '''Your is_clear_winner() function definition uses
