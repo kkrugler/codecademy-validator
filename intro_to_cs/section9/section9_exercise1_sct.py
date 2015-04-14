@@ -171,19 +171,19 @@ for line in code_lines:
             return result
 
 if (score_prediction_2 == 0):
-    return '''Next, predict the value of the two variables in
+    return '''Next, predict the values of the two variables in
 the second section, as directed.'''
 
 if (score_prediction_3 == 0):
-    return '''Next, predict the value of the two variables in
+    return '''Next, predict the values of the two variables in
 the third section, as directed.'''
 
 if (score_prediction_4 == 0):
-    return '''Next, predict the value of the three variables in
+    return '''Next, predict the values of the three variables in
 the fourth section, as directed.'''
 
 if (score_prediction_5 == 0):
-    return '''Finally, predict the value of the three variables
+    return '''Finally, predict the values of the three variables
 in the fifth section, as directed.'''
 
 return True
