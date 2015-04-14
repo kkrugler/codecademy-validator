@@ -29,8 +29,9 @@ def function_3():
 def function_4(score):
     return score + extra_points
 
-# The following line invokes function_1() once and saves its
-# return value.
+# The following line invokes function_1() once and then saves
+# its return value.
+# DO NOT modify this line.
 result_1 = function_1()
 
 # Predict the value returned from function_1() as well as the
@@ -39,8 +40,9 @@ result_1 = function_1()
 result_1_prediction = 8
 score_prediction_1 = 8
 
-# The following line invokes function_2() once and saves its
-# return value.
+# The following line invokes function_2() once and then saves
+# its return value.
+# DO NOT modify this line.
 result_2 = function_2()
 
 # Predict the value returned from function_2() as well as the
@@ -49,8 +51,9 @@ result_2 = function_2()
 result_2_prediction = 12
 score_prediction_2 = 12
 
-# The following line invokes function_3() once and saves its
-# return value.
+# The following line invokes function_3() once and then saves
+# its return value.
+# DO NOT modify this line.
 result_3 = function_3()
 
 # Predict the value returned from function_3() as well as the
@@ -60,7 +63,8 @@ result_3_prediction = 14
 score_prediction_3 = 12
 
 # The following line invokes function_4() once with the
-# argument 10 and saves the return value.
+# argument 10 and then saves its return value.
+# DO NOT modify this line.
 result_4 = function_4(10)
 
 # Predict the value returned from function_4() as well as the
@@ -72,6 +76,7 @@ score_prediction_4 = 12
 # The following line invokes function_4() a second time, passing
 # score as the argument and then setting score to the return
 # value.
+# DO NOT modify this line.
 score = function_4(score)
 
 # Predict the value of the score variable at this point in the
