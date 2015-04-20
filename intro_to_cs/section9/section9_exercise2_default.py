@@ -123,7 +123,9 @@ score_prediction_5 = 0
 # function so that you must also change one or more of your
 # predictions.
 #
-# Add that variable name to the global statement, change your
-# prediction(s) to account for the new behavior of that function,
-# and then click the Save & Submit button to make sure no errors
-# result and that your new predictions are all correct.
+# Add that variable name to the global statement, then click the
+# Save & Submit button.  You'll know you added the right one if
+# no errors result, but at least one of your predictions is
+# suddenly wrong.  If so, fix your prediction(s) to account for
+# the new behavior of the function, then click the Save & Submit
+# button to check them.
