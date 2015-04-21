@@ -1,50 +1,72 @@
-# The following function returns a String that warns students
-# about an activity that is either always prohibited, or perhaps
-# prohibited just during a specific time period (i.e., if the
-# caller specifies a value for the optional when parameter).
-#
-# DO NOT modify the code in the function definition, except for
-# the specific changes to its SIGNATURE that are requested later
-# in this exercise.
-def warn(activity='texting', location='on campus', when=None):
-    if (when == None):
-        when_part = ''
-    else:
-        when_part = ' %s' % when
-    inserted = (activity, location, when_part)
-    return 'Note that %s is prohibited %s%s!' % inserted
+# The following function definition returns a "cleaned up"
+# version of the name passed by the caller, capitalizing the
+# first letter of the first and last names (and making sure the
+# rest of the letters are lowercase).
+# DO NOT modify the code in this function definition.
+def normalize_name(name):
+    name = name.lower()
+    name = name[0].upper() + name[1:]
+    pos = name.find(' ') + 1
+    if (pos > 0):
+        name = name[:pos] + name[pos].upper() + name[pos+1:]
+    return name
 
-# The first warning is about texting.  Note that the optional
-# when parameter is not specified.
-warn_1 = warn()
+# Here we use normalize_name() to clean up three example names,
+# sending the results from the first two invocations to the
+# console.
+# DO NOT modify the code in this section.
+print normalize_name('cHRIs')
+print normalize_name('cHRIs SchneideR')
+name = 'KEN krugler'
+normalized_name = normalize_name(name)
 
-# Predict the value of the warn_1 variable at this point in
-# the program by setting warn_1_prediction to a String literal.
-warn_1_prediction = 'Note that texting is prohibited on campus!'
+# Predict the value of each of the two variables above at this
+# point in the program by assigning the two variables below to
+# String literals:
+name_prediction = 'KEN krugler'
+normalized_name_prediction = 'Ken Krugler'
 
-# The second warning is more general.  Note that the optional
-# when parameter is still not specified.
-warn_2 = warn('all cell phone usage')
+# The following function definition doubles the score passed to
+# it, but never returns a score larger than 100.
+# DO NOT modify the code in this function definition.
+def double_score(score):
+    score = score * 2
+    if (score > 100):
+        score = 100
+    return score
 
-# Predict the value of the warn_2 variable at this point in the
-# program by setting warn_2_prediction to a String literal.
-warn_2_prediction = 'Note that all cell phone usage is prohibited on campus!'
+# Here we use double_score() to double a few example scores,
+# again sending the results from the first two invocations to the
+# console.
+# DO NOT modify the code in this section.
+print double_score(12)
+print double_score(55)
+score = 35
+doubled_score = double_score(score)
 
-# The third warning is about a different activity and location,
-# but the optional when parameter is still not specified.
-warn_3 = warn('skateboarding', 'in the computer lab')
+# Predict the value of each of the two variables above at this
+# point in the program by assigning the two variables below to
+# String literals:
+score_prediction = 35
+doubled_score_prediction = 70
 
-# Predict the value of the warn_3 variable at this point in the
-# program by setting warn_3_prediction to a String literal.
-warn_3_prediction = 'Note that skateboarding is prohibited in the computer lab!'
+# The following function definition uses the other two functions
+# to both clean up the player name and double the player's score.
+# DO NOT modify the code in this function definition.
+def double_player_score(player_info):
+    old_player_info = [player_info[0], player_info[1]]
+    player_info[0] = normalize_name(player_info[0])
+    player_info[1] = double_score(player_info[1])
+    return old_player_info
 
-# The fourth warning is about a different activity and location,
-# but the default value of the when parameter is "overridden".
-warn_4 = warn('PDA', 'on campus', 'while teachers are looking')
+# Here we use double_player_score() on some example player
+# information.
+# DO NOT modify the code in this section.
+player_info_1 = [name, doubled_score]
+player_info_2 = double_player_score(player_info_1)
 
-# Predict the value of the warn_4 variable at this point in the
-# program by setting warn_4_prediction to a String literal.
-warn_4_prediction = 'Note that PDA is prohibited on campus while teachers are looking!'
-
-# Refer to the Instructions section to the left for additional
-# directions.
+# Predict the value of each of the two variables above at this
+# point in the program by assigning the two variables below to
+# String literals containing their string representations:
+player_info_1_prediction = "['Ken Krugler', 100]"
+player_info_2_prediction = "['KEN krugler', 70]"
