@@ -54,7 +54,7 @@ so check your text over carefully.'''
     # of the expected string.
     if (is_describe_expected):
         return '''Your %s was "%s" instead of "%s"%s''' % (desc, actual, expected, case_warning)
-    return '''Your %s was incorrect.''' % desc
+    return '''Your %s was incorrect.%s''' % (desc, case_warning)
 
 
 # TODO Maybe pass both name of variable and expected value in,
