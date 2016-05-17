@@ -1,0 +1,62 @@
+<div class="exercise-title">Call by value and mutability</div>
+<div class="exercise-content">
+    <p>Python functions use an evaluation strategy known as <em>call by value</em> to pass the caller&#39;s arguments to the parameters in the function signature. As we have seen in the previous two exercises, the function definition cannot directly <em>reassign</em> any variables provided as arguments by the caller. For example, the following code sends &quot;5&quot; to the console:</p>
+
+    <pre><code>
+def add_point(score):
+    score = score + 1
+
+g_score = 5
+add_point(g_score)
+print g_score
+    </code></pre>
+
+    <p>Here, the <em>value</em> 5 from the caller&#39;s variable <strong>g_score</strong> has been provided as the argument. Python assigns this <em>value</em> to the <strong>score</strong> parameter, which is a completely separate variable whose scope is local to the <strong>add_point</strong>() function definition. Reassigning the local <strong>score</strong> parameter to a new value does not also reassign the caller&#39;s <strong>g_score</strong> variable. Again, it was the <em>value</em> of <strong>g_score</strong> that was passed to <strong>add_point</strong>(), not a reference to the variable itself.</p>
+
+    <p>Other programming languages support different evaluation strategies for passing arguments to function definitions (e.g., <em>call by reference</em>), but we&#39;ll avoid studying them in this course. <em>Call by value</em> is by far the most common strategy, because it helps isolate the caller&#39;s variables from the function definitions. However, this isolation is far from absolute. Global variables certainly have scopes that intrude into function definitions, but another important consideration is whether the <em>value</em> passed by the caller is <em>mutable</em>.</p>
+
+    <p>To review, most simple Python data types (including <strong>Strings</strong>) are <em>immutable</em>, which means that once the value is created, it cannot be modified. For example, the following code builds a new String by appending a suffix to the first String, and it reassigns <strong>name</strong> to this new String, but this doesn&#39;t affect the original String value at all. Thus, it sends &quot;Chris&quot; to the console:</p>
+
+    <pre><code>
+name = &quot;Chris&quot;
+old_name = name
+name = name + &quot;topher&quot;
+print old_name
+    </code></pre>
+
+    <p>However, the <strong>List</strong> data type is <em>mutable</em>, so we <strong>can</strong> change the <em>value</em> of a List variable without reassigning that variable to a different List. For example, the following code sends &quot;[&#39;Christopher&#39;, &#39;Sheldon&#39;, &#39;Schneider&#39;]&quot; to the console:</p>
+
+    <pre><code>
+name = [&#39;Christopher&#39;, &#39;Schneider&#39;]
+old_name = name
+name.insert(1, &#39;Sheldon&#39;)
+print old_name
+    </code></pre>
+
+    <p>This has important implications for function calls. Although a function cannot directly <em>reassign</em> the caller&#39;s argument variable, it can still affect the <em>value</em> of that variable if its data type is <em>mutable</em>. For example, the following code also sends &quot;[&#39;Christopher&#39;, &#39;Sheldon&#39;, &#39;Schneider&#39;]&quot; to the console:</p>
+
+    <pre><code>
+def insert_middle_name(name, middle_name):
+    name.insert(1, middle_name)
+
+g_name = [&#39;Christopher&#39;, &#39;Schneider&#39;]
+insert_middle_name(g_name, &#39;Sheldon&#39;)
+print g_name
+    </code></pre>
+
+    <p>It&#39;s essential to distinguish <em>variable assignment</em> (also known as &quot;binding&quot;) from the <em>value modification</em> of a mutable Python object to which that variable is currently assigned (or &quot;bound&quot;).</p>
+
+    <p>Finally, a function that accepts a <em>mutable</em> parameter should make clear in its documentation whether (and precisely how) it might modify that parameter value. This is an essential part of the contract between the caller and the function that is obviously not specified by the function signature.</p>
+</div>
+<div class="exercise-instructions">
+    <p>First, predict the values of the <strong>name</strong> and <strong>normalized_name</strong> variables, as directed.</p>
+
+    <p>Next, predict the values of the <strong>score</strong> and <strong>doubled_score</strong> variables, as directed.</p>
+
+    <p>Finally, predict the <em>string representations</em> of the <strong>player_info_1</strong> and <strong>player_info_2</strong> variables, as directed.</p>
+</div>
+<div class="exercise-hint">
+    <p>The <strong>String</strong> and <strong>Integer</strong> Python data types are <em>immutable</em>, so a function definition can&#39;t directly modify the caller&#39;s String and Integer variables passed in as arguments. However, the <strong>List</strong> data type is <em>mutable</em>, so any changes to a List parameter performed within the function definition will also affect the value of the variable passed in via that argument.</p>
+
+    <p>Finally, note that the <strong>double_player_score</strong>() function builds a <em>copy</em> of the original <strong>player_info</strong> parameter value <em>before</em> it modifies the List, and that it returns this <em>unmodified</em> copy (<strong>old_player_info</strong>) to the caller.</p>
+</div>

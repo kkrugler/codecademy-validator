@@ -1,0 +1,63 @@
+<div class="exercise-title">Short-circuiting sub-expressions</div>
+<div class="exercise-content">
+    <p>You may have noticed as you were evaluating Boolean expressions &quot;in your head&quot; that when the value preceding the <strong>and</strong> operator is False, checking the value that follows it is just a waste of time. You know the <strong>and</strong> will return False in that case, no matter what that second value is. For example, the following code will <em>never</em> send any output to the console, no matter what the value of <strong>score</strong> happens to be:</p>
+
+    <pre><code>
+is_not_true = False
+if (is_not_true and (score &gt;= 5)):
+    print &#39;Congratulations!&#39;
+    </code></pre>
+
+    <p>Python understands this as well, and it doesn&#39;t bother comparing <strong>score</strong> to 5 either. In this sense, the False value in <strong>is_not_true</strong> <em>short-circuits</em> the sub-expression that follows the <strong>and</strong> operator. Similarly, the <strong>is_always_true</strong> in the <strong>or</strong> expression below will short-circuit the sub-expression that follows the <strong>or</strong> operator, so that the message will <em>always</em> be sent to the console, no matter what value <strong>score</strong> has:</p>
+
+    <pre><code>
+is_always_true = True
+if (is_always_true or (score &gt;= 5)):
+    print &#39;Congratulations!&#39;
+    </code></pre>
+
+    <p>However, the value <em>following</em> the <strong>and</strong>/<strong>or</strong> operator <strong>can&#39;t</strong> short-circuit a sub-expression preceding that operator. Unlike a human might, Python <strong>doesn&#39;t</strong> consider which sub-expression would probably be the <em>easiest</em> for it to try first; it <strong>always</strong> evaluates the first sub-expression. For example, Python will always try to compare the length of <strong>maybe_none</strong> to 10 when evaluating the following conditional structure, even if its value is None (generating an error in that case):</p>
+
+    <pre><code>
+if (len(maybe_none) &gt; 10) and (maybe_none != None)):
+    print maybe_none
+    </code></pre>
+
+    <p>Thus, to <em>guard</em> against that None case, the code should have been written as follows instead:</p>
+
+    <pre><code>
+if ((maybe_none != None) and len(maybe_none) &gt; 10)):
+    print maybe_none
+    </code></pre>
+
+    <p>Guarding the second sub-expression in this way is perhaps the most common use of short-circuiting. Another application is to avoid performing a relatively difficult calculation (particularly when the expression is embedded within a loop that will execute it many times):</p>
+
+    <pre><code>
+for number in range(1, 10**40):
+    if ((number &lt; 100) and (is_prime(number)):
+        print &#39;%d is prime, by the way&#39; % number
+    do_something_else(number)
+    </code></pre>
+
+    <p>Therefore, the order in which such Boolean sub-expressions appear (with respect to the <strong>and</strong>/<strong>or</strong> operator) can affect the overall performance of your program, dramatically in some cases.</p>
+
+    <p>A somewhat different short-circuiting consideration is whether the second sub-expression has any <em>side effects</em>. We&#39;ll study such side effects in detail during this exercise.</p>
+
+    <p>Finally, note that the <strong>and</strong> and <strong>or</strong> operators are the only ones with this short-circuiting property. All other Python operators evaluate their sub-expressions completely before performing the operation on the resulting values.</p>
+</div>
+<div class="exercise-instructions">
+    <p>First, predict the value of <strong>string_1</strong> as directed.</p>
+
+    <p>Next, predict the value of <strong>string_2</strong> as directed.</p>
+
+    <p>Next, try out the code that considers <strong>valid_input_scores</strong>, as directed.</p>
+
+    <p>Finally, guard against the error that results in <strong>announce_leader</strong>() by short-circuiting its call to <strong>is_best</strong>().</p>
+</div>
+<div class="exercise-hint">
+    <p>Think about what scores will be added to <strong>unique_scores_1</strong>. Note that if it already contains a given score, the same score won&#39;t be added to it again. Predict the <em>string representation</em> of its value by setting <strong>string_1_prediction</strong>, as directed.</p>
+
+    <p>When making your <strong>string_2_prediction</strong>, remember that the short-circuiting will prevent some scores from being added to <strong>unique_scores_2</strong>.</p>
+
+    <p>Finally, you can guard against scores that equal None by adding a short-circuit test to ensure that <strong>score</strong> is not None. Use the <strong>and</strong> operator to do so.</p>
+</div>

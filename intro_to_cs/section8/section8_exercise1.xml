@@ -1,0 +1,30 @@
+<div class="exercise-title">Arithmetic operators</div>
+<div class="exercise-content">
+    <p>Again, we&#39;ve already been using several arithmetic expressions and operators. Before we dive in a little deeper, let&#39;s make sure we understand what we mean by the terms &quot;expression&quot; and &quot;operator&quot;.</p>
+
+    <p>Each computer language supports a set of special symbols (typically including +, -, *, /, &lt; and &gt;) that are known as <strong>operators</strong>, because they <em>operate</em> on input values to produce a new result value. For example, the addition operator (+) in the following statement operates on the Literal <strong>int</strong> values <strong>3</strong> and <strong>4</strong>, producing the result <strong>7</strong>, which is then assigned to the <strong>int</strong> variable <strong>sum</strong>:</p>
+
+    <p><code>sum = 3 + 4</code></p>
+
+    <p>This is similar to the way that a function operates on its parameters to produce a result value. However, the syntax is very different, and (although there are some built-in functions), <strong>all</strong> of the operators in a computer language are built-in.</p>
+
+    <p>The &quot;3 + 4&quot; in the example above is the simplest form of an <strong>expression</strong>, using a single operator and its input values. Like most others, the addition operator (+) is a <em>binary</em> (i.e., two input) operator that employs <em>infix</em> notation, meaning that the operator is placed <em>in between</em> its two inputs. There are also <em>unary</em> (i.e., one input) operators, both <em>prefix</em> (i.e., those placed immediately before their input) and <em>postfix</em> (placed after their input). We&#39;ll only study one of those (<strong>not</strong>, the unary prefix negation operator).</p>
+
+    <p>As in mathematics, we can use more than one operator in an expression to perform a more complex calculation, and we can use parentheses to carefully control (and clarify) the <em>order of operation</em>. For example:</p>
+
+    <p><code>total_inches = (feet * 12) + inches</code></p>
+
+    <p>The parentheses in the expression above are actually not required, because the multiplication operator (*) has a higher <em>precedence</em> than the addition operator (+), just like it does in mathematics. However, including them anyway certainly clarifies the order of operation, so that programmers reading your code don&#39;t have to remember which operator has higher precedence (not to mention whether it employs left-to-right or right-to-left associativity. <strong>Warning!</strong> If you ask, Mr. Schneider is liable to explain associativity to you as well.)</p>
+</div>
+<div class="exercise-instructions">
+    <p>First, predict the result of the first three expressions, as directed.</p>
+
+    <p>Next, review the result of the next 19 expressions in the console.</p>
+
+    <p>Finally, predict the result of the last expression, as directed.</p>
+</div>
+<div class="exercise-hint">
+    <p>To correctly predict the result of the first expression, you must remember that the division operator (/) has a higher precedence than the subtraction operator (-).</p>
+
+    <p>To correctly predict the result of the final expression, you may need to work it out on a piece of paper. You&#39;ll also have to think carefully about each pair of parentheses to get the order of operation right.</p>
+</div>

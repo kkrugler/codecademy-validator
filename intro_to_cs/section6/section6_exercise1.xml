@@ -1,0 +1,49 @@
+<div class="exercise-title">A Tuple is an immutable sequence of first-class Python objects</div>
+<div class="exercise-content">
+    <p>It is often necessary to store <em>collections</em> (e.g., <em>arrays</em>) of simple data types, and programming languages have various ways of doing so. In Python, all such collections are called <em>sequences</em>, and there are several different flavors. The first sequence we considered was the <strong>String</strong>, a sequence of characters. Although it was possible to retrieve one of those characters, Python actually returned it in the form of a new String,  so the individual characters in a String aren&#39;t <em>first-class</em> objects in Python.</p>
+
+    <p>In contrast, a <strong>Tuple</strong> is a sequence of other <em>first-class</em> Python objects. As we have seen previously, you <em>construct</em> a new Tuple by enclosing its elements in parentheses and separating them with commas. For example, the following code creates a Tuple containing the first three natural numbers:</p>
+
+    <p><code>first_3 = (1, 2, 3)</code></p>
+
+    <p>Most programming languages require that all elements in a collection share the same data type (e.g., all the elements of <strong>first_3</strong> above share the type <strong>int</strong>). Although there is no such restriction in Python, storing different data types in the same Tuple (or some other Python sequence) usually makes it more difficult to write code that accesses these elements in a natural way.</p>
+
+    <p>That said, we <em>can</em> make good use of Python&#39;s Tuple flexibility when using the formatting operator (%). For example, the following code sends &quot;Player Bob has score 15.&quot; to the console:</p>
+
+    <pre><code>
+player = &#39;Bob&#39;
+score = 15
+print &#39;Player %s has score %d.&#39; % (player, score)
+    </code></pre>
+
+    <p>Note that the <strong>Tuple</strong> above contains one <strong>String</strong> and one <strong>int</strong>.</p>
+
+    <p>An important property of Python <strong>Tuples</strong> is that they are <em>immutable</em>. This means that once you&#39;ve constructed a Tuple, you can&#39;t add elements to it or remove elements from it. You&#39;re free to use it to build some other Tuple, and you&#39;re also free to replace the value of a Tuple-containing variable with something else, but neither of these operations would affect the original Tuple object.</p>
+
+    <p>Note that a Python <strong>String</strong> is another kind of <em>immutable</em> sequence. For example, the <strong>upper</strong>() method of a String does not modify the original String, but instead returns a new String that has each lowercase character replaced with its uppercase equivalent.</p>
+
+    <p>Finally, the <em>indexing</em> and <em>slicing</em> operations we learned to use with <strong>Strings</strong> (as well as the <strong>len</strong>() built-in function) also work with other <em>sequence</em> data types, including <strong>Tuples</strong>. For example, the following code sends &quot;Sean&quot; to the console:</p>
+
+    <pre><code>
+name_parts = (&#39;Mr.&#39;, &#39;Sean&#39;, &#39;Penn&#39;)
+print name_parts[1]
+    </code></pre>
+</div>
+<div class="exercise-instructions">
+    <p>First, predict the values of three String variables, as directed.</p>
+
+    <p>Next, build a new Tuple containing the names of the best three elements from the <strong>players</strong> Tuple (ordered by their scores), as directed.</p>
+
+    <p>Next, announce the <strong>second</strong> best player and score, as directed.</p>
+
+    <p>Review the output sent to the console <em>very carefully</em> to make sure you understand Tuple <strong>slicing</strong>.</p>
+
+    <p>Finally, use Tuple slicing as directed to build a new Tuple containing the names of the best two players (again, ordered by their scores).</p>
+</div>
+<div class="exercise-hint">
+    <p>Remember that the first element of a sequence is referenced using index 0 (not 1), because position 0 is just before this element.</p>
+
+    <p>Remember that although <strong>message_3</strong> contains the best score, the player name is <strong>wrong</strong>. It actually contains the very first element from the <strong>players</strong> Tuple.</p>
+
+    <p>It may help to write down the player names and scores on a piece of paper, ordering each sequence from high to low score.</p>
+</div>

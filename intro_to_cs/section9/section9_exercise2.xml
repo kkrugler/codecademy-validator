@@ -1,0 +1,47 @@
+<div class="exercise-title">Global variables (considered harmful)</div>
+<div class="exercise-content">
+    <p>Virtually all of the variables that we&#39;ve been using in our sample code and exercises have been <strong>global variables</strong>. (The exceptions have been the variables we defined <em>within</em> our function definitions and the function parameters themselves.) The <strong>scope</strong> of a <strong>global variable</strong> in Python spans the <em>entire file</em> (as well as any other files importing this module).</p>
+
+    <p>We&#39;ve been using these global variables largely to avoid this issue of variable <strong>scope</strong> while we concentrated on other programming fundamentals. However, once you move beyond short snippets of example code and begin building programs that do anything meaningful, modularity becomes <em>paramount</em>. Accordingly, you break your program into lovely bite-sized functions. However, if one of your variables is being read and/or modified in multiple sections of your code (possibly separated by a thousand or more lines), then you have still failed to properly modularize your <em>data</em>.</p>
+
+    <p>The basic approach is to carefully <em>limit</em> the scope of each variable. The most straightforward way to do so is to define variables only within functions and then to use function signatures to deliberately control the data that flows into and that is returned from each function.</p>
+
+    <p>That said, global variables often provide the simplest solution to a given implementation problem (and it&#39;s a rare program that doesn&#39;t contain at least one global variable), so most programming languages (including Python) provide them. However, they should be avoided whenever possible, as the presence of a global variable typically signals a fundamental flaw in the design of any software.</p>
+
+    <p>In this exercise, we&#39;ll study how global variables can be used in Python, focusing on both the deliberate limitations of the language and how it highlights such limited use to make it a little easier for the software developer to keep track of inherently unstructured data. In a nutshell:</p>
+
+    <p>1) A function has direct <em>read</em> access to any global variable as long as there is no identically named parameter or local variable.</p>
+
+    <p>2) A function parameter with the same name as a global variable or an assignment within the function definition to a <em>local</em> variable with the same name essentially <em>hides</em> the global variable from that function definition.</p>
+
+    <p>3) A function must explicitly declare all global variables that it might <em>modify</em>, using a <strong>global</strong> statement at the very beginning of the function definition. For example:</p>
+
+    <pre><code>
+g_score = 10
+def add_to_score(new_points):
+    global g_score
+    g_score = g_score + new_points
+    </code></pre>
+
+    <p>If the <strong>global</strong> statement had been omitted, Python would have complained, because the global <strong>g_score</strong> was both <em>read</em> and then <em>modified</em>. It would have been fine to just read the global <strong>g_score</strong> without a <strong>global</strong> statement. In fact, it would have been better <em>not</em> to use a <strong>global</strong> statement in that case, because otherwise readers will assume that the function modifes the global variable.</p>
+
+    <p>It would also have been legal syntax to just assign <strong>g_score</strong> without reading it first, because Python would then have treated it as a <em>local</em> variable (which <em>hides</em> the global <strong>g_score</strong> from the function definition). However, in this case the local variable name would be misleading. A convention like prefixing <strong>global</strong> variable names with &quot;g_&quot; highlights their global scope.</p>
+</div>
+<div class="exercise-instructions">
+    <p>First, predict the values of the <strong>score</strong> and <strong>result_1</strong> variables immediately after <strong>function_1</strong>() gets invoked, as directed.</p>
+
+    <p>Next, make similar predictions after the invocation of <strong>function_2</strong>(), as directed.</p>
+
+    <p>Next, do the same thing after the invocations of <strong>function_3</strong>() and each of the invocations of <strong>function_4</strong>(), as directed.</p>
+
+    <p>Next, remove the unnecessary variable names from the global statements in the four functions, as directed.</p>
+
+    <p>Finally, add a <em>new</em> variable name (i.e., one that wasn&#39;t there originally) to one of those global statements, but choose the single variable and function combination that would still allow for legal Python syntax. You will also need to to re-do one or more of your predictions to account for the change in this function&#39;s behavior, but make no <em>other</em> additional changes to the code.</p>
+</div>
+<div class="exercise-hint">
+    <p>The <strong>score</strong> and <strong>extra_points</strong> variables at the top of the file are both <strong>global</strong> variables. However, they can be &quot;hidden&quot; from a function definition by a <strong>parameter</strong> or <strong>local variable</strong> within that function that has the same name. When a global is hidden from a function definition, the function cannot read its value or update it.</p>
+
+    <p>For example, <strong>function_4</strong>() has a parameter named <strong>score</strong>, so the global <strong>score</strong> is completely hidden from this function definition. The only way that <strong>function_4</strong>() could modify the value of the global <strong>score</strong> is by returning something that the caller then assigned to the global.</p>
+
+    <p>Carefully review the three points in the white text above that summarize the rules for accessing global variables in Python.</p>
+</div>

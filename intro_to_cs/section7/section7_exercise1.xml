@@ -1,0 +1,48 @@
+<div class="exercise-title">The while statement</div>
+<div class="exercise-content">
+    <p>By default a computer executes statements sequentially, one at a time, until it reaches the end of the program. We&#39;ve seen how <strong>if</strong>/<strong>elif</strong>/<strong>else</strong> conditional structures can be used to deviate from this normal behavior, or <em>control the flow</em>. Such conditional structures can choose to execute or skip over blocks of statements, depending on conditions like the values of variables, etc.</p>
+
+    <p>Another very important class of <em>control flow structures</em> allow you to execute a block of code repeatedly. Because computers execute simple tasks so much faster than humans do (and because they never get bored when asked to do the same thing over and over again), a useful software module typically incorporates many such programming &quot;loops&quot;.</p>
+
+    <p>The simplest iteration construct in Python is the <strong>while</strong> statement, which repeatedly executes a block of statements as long as its condition is True. For example, the following <strong>while</strong> structure will send the first 10 natural numbers to the console:</p>
+
+    <pre><code>
+number = 1
+while (number &lt; 11):
+    print number
+    number = number + 1
+    </code></pre>
+
+    <p>Like the <strong>if</strong> statement, the <strong>while</strong> statement first checks its condition, and if it is False, the entire (indented) block of statements is skipped. If the condition is True, then (again like the <strong>if</strong> statement) the block of statements is executed, <em>but then the computer returns to the while statement</em> rather than continuing with the rest of the program. The condition is checked again (and on subsequent iterations), and the process repeats until the condition is False (at which time the block is skipped and the computer continues with the first statement following the code block).</p>
+
+    <p>What do you think the following code would send to the console?</p>
+
+    <pre><code>
+while (True):
+    print &#39;Get a job!&#39;
+    </code></pre>
+
+    <p>This is an example of an <em>infinite loop</em>, and infinite loops are one reason why computer software sometimes &quot;hangs&quot; (i.e., stops responding to the user). Although it&#39;s obvious that the code above would loop forever, small mistakes or <em>bugs</em> in the code can sometimes lead to infinite loops when unexpected conditions arise. In fact, Alan Turing (1912-1954) proved in 1936 that it is impossible to determine whether an arbitrary computer program will ever terminate (vs. continuing to run forever), and this is known as the &quot;Halting Problem&quot;. Turing designed one of the very first working digital computing devices (the Bombe), and then used it to defeat the Nazis in World War II.</p>
+</div>
+<div class="exercise-instructions">
+    <p>First, click the <strong>Save &amp; Submit Code</strong> button to review the results sent to the console from calling the <strong>describe_10_raised_to</strong>() function with various exponents.</p>
+
+    <p>Next, modify the <strong>raise_2_to</strong>() function definition so that it returns 2 raised to its <strong>exponent</strong> parameter, as directed.</p>
+
+    <p>Test your <strong>raise_2_to</strong>() function by assigning the <strong>exponent</strong> variable in the code block following its definition.</p>
+
+    <p>Once you think it&#39;s working properly, assign <strong>exponent</strong> to 31 to let the SCT test <strong>raise_2_to</strong>() for you.</p>
+
+    <p>Next, review the results sent to the console from calling the <strong>log_base_10_description</strong>() function with various natural numbers.</p>
+
+    <p>Now modify the <strong>log_base_2</strong>() function so that it returns the exponent of the power of 2 that its <strong>natural_number</strong> parameter meets or exceeds, as directed.</p>
+
+    <p>Test your <strong>log_base_2</strong>() function by assigning the <strong>natural_number</strong> variable in the code block following its definition.</p>
+
+    <p>Once you think it&#39;s working properly, assign <strong>natural_number</strong> to 65536 to let the SCT test <strong>log_base_2</strong>() for you.</p>
+</div>
+<div class="exercise-hint">
+    <p>Your <strong>raise_2_to</strong>() function should use the same algorithm as <strong>describe_10_raised_to</strong>() did, but it should multiply by 2 instead of 10, and it should just return <strong>result</strong> instead of building a String.</p>
+
+    <p>Your <strong>log_base_2</strong>() function should use the same algorithm as <strong>log_base_10_description</strong>() did, but it should divide by 2 instead of 10, and it should just return the power of 2 exponent instead of building a String.</p>
+</div>

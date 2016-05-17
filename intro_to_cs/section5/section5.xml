@@ -1,0 +1,4 @@
+<div class="section-title">More fun with Strings</div>
+<div class="section-overview">
+    <p>We've been using Strings to output text to the console, but in this section we will study them in more detail, particularly as our introduction to the way computers handle arrays of data (plus a little bit about object-oriented programming).</p>
+</div>

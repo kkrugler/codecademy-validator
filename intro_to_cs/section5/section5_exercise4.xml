@@ -1,0 +1,39 @@
+<div class="exercise-title">String methods</div>
+<div class="exercise-content">
+    <p>Because it&#39;s a <em>first class object</em>, a <strong>String</strong> is more than just a piece of data. Each String <em>instance</em> also contains built-in functions known in &quot;object-oriented&quot; programming as <em>methods</em> that you can use to ask the String questions about itself. For example, the following code sends two lines containing &quot;10&quot; and then &quot;mixed case&quot; to the console:</p>
+
+    <pre><code>
+my_string = &#39;Mixed CASE&#39;
+print len(my_string)
+print my_string.lower()
+    </code></pre>
+
+    <p>This code works because <strong>my_string</strong> is an instance of a <strong>String</strong>, and every <strong>String</strong> has a <em>method</em> named <strong>lower</strong>() that returns a new String containing the same text as itself, but with each character converted to lowercase.</p>
+
+    <p>Note that the syntax for calling a method is different from the syntax for calling a simple function like <strong>len</strong>(). A String method call begins with a String variable. This is followed immediately by a period and the method name. Any parameters passed to the method (none in this case) are enclosed in a pair of parentheses, just like they are for a simple function call.</p>
+
+    <p>Note how my_string is passed as a <em>parameter</em> to the <strong>len</strong>() built-in function, whereas the <strong>upper</strong>() method is referenced <em>from</em> <strong>my_string</strong>, as an attribute of the instance.</p>
+
+    <p>Finally, note that the built-in function <strong>len</strong>() can also be used with other kinds of sequences (e.g., <strong>Tuples</strong>), but the <strong>upper</strong>() method is specific to the <strong>String</strong> data type, and can only be referenced from <strong>String</strong> instances.</p>
+
+    <p>In this exercise, we&#39;ll learn about the following String methods:</p>
+
+    <p><strong>lower</strong>()<br>
+<strong>upper</strong>()<br>
+<strong>startswith</strong>(prefix)<br>
+<strong>endswith</strong>(suffix)<br>
+<strong>find</strong>(substring)<br>
+<strong>replace</strong>(target, replacement)</p>
+</div>
+<div class="exercise-instructions">
+    <p>First, add a print statement as directed to output an uppercase version of <strong>my_string</strong>.</p>
+
+    <p>Next, modify the second conditional to test whether <strong>my_string</strong> ends with &quot;homework&quot;.</p>
+
+    <p>Then predict the results from various calls to the <strong>find</strong>() and <strong>replace</strong>() methods of <strong>my_string</strong>.</p>
+
+    <p>Finally, modify the function definition of <strong>improve_chris_status</strong>() as directed.</p>
+</div>
+<div class="exercise-hint">
+    <p>Each method call must use the method call syntax (instead of the function call syntax). For example, it should begin with a String literal or variable, then a period, then the method name, then the parameters (if any) surrounded by parentheses.</p>
+</div>

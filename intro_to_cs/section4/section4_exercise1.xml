@@ -1,0 +1,16 @@
+<div class="exercise-title">String representations</div>
+<div class="exercise-content">
+    <p>It&#39;s often difficult for beginning programmers to understand the difference between a simple type like an <strong>Integer</strong> and its <em>String representation</em>, because they appear identical when printed to the console.  Python, like many other languages, muddies the distinction in attempting to be helpful, by printing the <em>String representation of an Integer</em> when you ask it to print an <strong>Integer</strong>, rather than forcing you to explicitly convert your variable (or literal value) from an <strong>Integer</strong> to a <strong>String</strong> yourself.  However, they really are two different data types, as the examples in this exercise illustrate.</p>
+
+    <p>Because Python can&#39;t always guess what you intend, it&#39;s usually a good idea to be as explicit as you can. Doing so avoids problems where Python misinterprets your intent and generates an error, or worse, just does the wrong thing. Trying to be explicit is generally more work, but it typically pays off because a bug will get caught earlier. It can also make your program easier for humans to read.</p>
+</div>
+<div class="exercise-instructions">
+    <p>There are a few errors in the program that originate from using an <strong>Integer</strong> where a <strong>String</strong> is expected or vice-versa. Work your way through these as suggested in the code comments.</p>
+
+    <p>Finally, modify the final two print statements as requested.</p>
+</div>
+<div class="exercise-hint">
+    <p>The Integer placeholder (%d) will only work if you have an Integer value. The String placeholder (%s) works with either an Integer or a String, because an Integer has a String representation.</p>
+
+    <p>The addition operator (+) only works with numbers like Integers. The concatenation operator (also +) only works with Strings. Make sure you only try to add two Integers (and you only try to concatenate two Strings). Otherwise, Python doesn&#39;t know whether you&#39;re trying to add or concatenate.</p>
+</div>

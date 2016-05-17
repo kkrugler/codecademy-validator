@@ -1,0 +1,38 @@
+<div class="exercise-title">Floating point numbers</div>
+<div class="exercise-content">
+    <p>The numeric variables we&#39;ve been using in Python so far have all been <strong>Integers</strong> (also known as <strong>ints</strong>). As you remember from math class, these include the natural numbers like {1, 2, 3...}, the negative versions of those {-1, -2, -3...}, and zero.</p>
+
+    <p>Division of integers in math often leads to rational numbers that are not among the integers. For example, dividing the integer 2 by the integer 3 results in two-thirds, which is not itself an integer. However, Python, like most programming languages, tries to avoid <em>changing</em> the data type when performing division. For <strong>int</strong> division it handles this by truncating the fractional part of the result (the remainder) and returning only the <em>quotient</em>. For example, the following statement prints just &quot;4&quot; to the console:</p>
+
+    <p><code>print 14 / 3</code></p>
+
+    <p>Most programming languages use the slash character (/) for division instead of the division symbol we use more often in math class (÷).</p>
+
+    <p>The <em>remainder</em> of <strong>int</strong> division is also available using the modulo (%) operator. Note that the same percent symbol (%) is used in Python for both the formatting operator and the modulo operator. The following statement prints &quot;2&quot; to the console:</p>
+
+    <p><code>print 14 % 3</code></p>
+
+    <p>Computers represent rational numbers and other non-integer real numbers using what programmers call a <em>floating-point number</em>, and Python refers to this type as a <strong>float</strong>. You should just think of it as a decimal number, though.</p>
+
+    <p>When you divide one <strong>float</strong> by some other (non-zero) number, the result can always be represented as a <strong>float</strong>, so there&#39;s no need to remove the fractional part. For example, the following statement prints &quot;4.66666666667&quot;:</p>
+
+    <p><code>print 14.0 / 3</code></p>
+
+    <p>Note how we told Python that the number fourteen was a <strong>float</strong> literal value (i.e., by including the decimal point).</p>
+
+    <p>Note also that the result of <strong>float</strong> division is rarely exact; computers have the same limitations as your calculator does when representing decimal numbers. Generally, testing whether a <strong>float</strong> equals something is a bad idea. You should instead use greater than (&gt;) or less than (&lt;), to insulate yourself from small precision errors.</p>
+</div>
+<div class="exercise-instructions">
+    <p>Predict the quotient and remainder as requested.</p>
+
+    <p>Next, compute a third of ten as a <strong>float</strong>.</p>
+
+    <p>Review all of the console output carefully to master <strong>float</strong> formatting, then use this new information to format your <strong>float</strong> as requested.</p>
+</div>
+<div class="exercise-hint">
+    <p>If you truncate the fractional part of division, you always end up with an <strong>Integer</strong>. When predicting the quotient, just divide as normal but skip the fractional part. The modulo operator (%) just returns the <em>remainder</em> (i.e, the part left over from the dividend that can&#39;t be divided evenly by the divisor).</p>
+
+    <p>If you&#39;re trying to compute a <strong>float</strong>, you should start with a <strong>float</strong>. A <strong>float</strong> literal value always includes a decimal point (otherwise, it&#39;s assumed to be an <strong>int</strong> instead.)</p>
+
+    <p>The <strong>float</strong> formatting placeholder is a little trickier than those for a <strong>String</strong> or an <strong>int</strong>, because it has an optional part to specify the number of decimal places (digits to the right of the decimal point) to include in the answer. You need three such digits to the right of the decimal point to round to the nearest thousandth.</p>
+</div>

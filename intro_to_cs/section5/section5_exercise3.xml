@@ -1,0 +1,31 @@
+<div class="exercise-title">Constructing strings</div>
+<div class="exercise-content">
+    <p>As we have seen, the <strong>len</strong>() built-in function accepts a String parameter and will return the length (number of characters) in that String. There is another built-in function that can be useful when manipulating Strings, the <strong>str</strong>() <em>constructor</em>, which returns a new String that is the <em>string representation</em> of whatever you pass it. For example, the following code will print &quot;42&quot; to the console.</p>
+
+    <pre><code>
+string_42 = str(42)
+print string_42
+    </code></pre>
+
+    <p>Of course, so would the following statement:</p>
+
+    <p><code>print 42</code></p>
+
+    <p>However, explicitly <em>constructing</em> the string representation of an <strong>int</strong> (or some other data type) is sometimes necessary. For example, we saw previously that the following code generates a TypeError, because Python doesn&#39;t know whether you want to add or concatenate the two literals:</p>
+
+    <p><code>print 42 + &#39; is a great number.&#39;</code></p>
+
+    <p>However, you can remove Python&#39;s confusion by explicitly <em>constructing</em> the string representation of the <strong>int</strong>, so that there is now a String on either side of the concatenation operator, and therefore, no reason to think it might be the addition operator:</p>
+
+    <p><code>print str(42) + &#39; is a great number.&#39;</code></p>
+
+    <p>We use the object-oriented programming term &quot;constructor&quot; for the built-in <strong>str</strong>() function, because an <em>instance</em> of the <strong>String</strong> data type is actually a first-class <em>object</em>; Python has no <em>primitive</em> data types (as many other languages like Java do). We&#39;ll be studying object-oriented programming in more detail later, but we&#39;ll begin using some object-oriented features of <strong>String</strong> instances in the next exercise.</p>
+</div>
+<div class="exercise-instructions">
+    <p>First modify the the three <em>_as_string</em> variable assignments as directed so that each uses the <strong>str</strong>() constructor to build the string representation of the associated variable.</p>
+
+    <p>Next, add three print statements that use the <strong>str</strong>() constructor directly to repeat the three console messages sent by the first three print statements.</p>
+</div>
+<div class="exercise-hint">
+    <p>The <strong>str</strong>() constructor should be passed something that isn&#39;t already a String. It returns String that can be used with the concatenation operator (+) to build a longer String, where using the original variable would only confuse Python (because it thinks maybe you want to add instead of concatenate).</p>
+</div>

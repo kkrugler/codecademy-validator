@@ -1,0 +1,4 @@
+<div class="section-title">Simple data types</div>
+<div class="section-overview">
+    <p>We've been using Integer and String variables, but there are a few other basic data types that most programming languages support. We'll introduce Floating-point numbers and Booleans in this section, and we'll also consider a few &quot;best practices&quot; for these simple types and their String representations.</p>
+</div>

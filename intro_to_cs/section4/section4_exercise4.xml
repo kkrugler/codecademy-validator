@@ -1,0 +1,16 @@
+<div class="exercise-title">Formatting literals</div>
+<div class="exercise-content">
+    <p>We now have experience with several basic Python data types: <strong>int</strong>, <strong>float</strong>, <strong>String</strong>, and <strong>bool</strong>. You should also know how to specify <em>literal</em> values matching each of these types.</p>
+
+    <p>Most programming languages also include a special literal value that stands for the <em>absence</em> of data. Programmers typically use this value to signify that a variable has not yet been initialized, that the answer is unknown, or that the function has nothing special to return. You may have noticed the word <strong>None</strong> appearing in the console window after all of the other output (unless there&#39;s an error). That&#39;s Python&#39;s literal value for the absence of data, and you are seeing it there because of the way that Codecademy runs your code, from an unseen function that doesn&#39;t return anything at all.</p>
+
+    <p>As we have seen, the formatting operator (%) supports a special placeholder for the <strong>int</strong> and <strong>float</strong> types, but all of the other data types just use the <strong>String</strong> placeholder.</p>
+</div>
+<div class="exercise-instructions">
+    <p>Assign each of the variables to the literal value requested, but make sure the type of your literal is the expected type so that the variable it gets assigned to will have that type as well.</p>
+
+    <p>Next, modify each print statement to include the value of the variable it references, but use the most appropriate formatting given the variable type, and follow any special instructions from the comments in the code.</p>
+</div>
+<div class="exercise-hint">
+    <p>You can use the exercise selector above (to the right of the course name) to review your past work if you&#39;ve forgotten the syntax for a literal or the formatting placeholder. Don&#39;t worry - your code will still be here when you return.</p>
+</div>

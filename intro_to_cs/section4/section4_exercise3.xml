@@ -1,0 +1,39 @@
+<div class="exercise-title">Boolean data</div>
+<div class="exercise-content">
+    <p>Computers are information machines. As such, they operate using formal logic. We&#39;ve already implemented such logical analysis using our conditional <strong>if</strong>/<strong>elif</strong>/<strong>else</strong> structures, where each of the conditional <em>expressions</em> in those structures, such as &quot;(bob_score &gt; jane_score)&quot; in the code below, was always either true or false:</p>
+
+    <pre><code>
+if (bob_score &gt; jane_score):
+    bob_score = bob_score + 1
+    </code></pre>
+
+    <p>The result of <em>evaluating</em> a conditional <em>expression</em> is always interpreted by a program as either true or false (there is never any &quot;middle ground&quot;), and all computer languages have ways of representing formal &quot;truthiness&quot;. Python defines the special <em>literal</em> values <strong>True</strong> and <strong>False</strong> to represent the two possibilities, plus a data type for variables that contain such values, called a <strong>Boolean</strong> or a <strong>bool</strong>.</p>
+
+    <p>The word &quot;Boolean&quot; comes from <em>Boolean algebra</em>, an area of mathematics dealing with formal logic that was pioneered by George Boole (1815 - 1864). We have already learned some Boolean algebra while we were studying conditionals, and we will learn more later. It is infinitely simpler than the algebra most students study in math class, but it is an incredibly powerful tool for information processing.</p>
+
+    <p>Here is another way we could have written the code above that uses a variable (<strong>is_bob_winning</strong>) with a <strong>Boolean</strong> (or <strong>bool</strong>) data type:</p>
+
+    <pre><code>
+is_bob_winning = (bob_score &gt; jane_score)
+if (is_bob_winning):
+    bob_score = bob_score + 1
+    </code></pre>
+
+    <p>Note how the <strong>bool</strong> variable <strong>is_bob_winning</strong> gets assigned the result of evaluating the conditional <em>expression</em>. Note also how this variable is <em>itself</em> used as the condition in the <strong>if</strong> clause that follows.</p>
+
+    <p>This version of the code has been presented only to illustrate Boolean data types; it would have been more <em>elegant</em> to implement this code without any such Boolean variables.</p>
+</div>
+<div class="exercise-instructions">
+    <p>Predict the value of the <strong>is_python_broken</strong> variable and check your prediction as directed.</p>
+
+    <p>Predict the values of the two <strong>int</strong> variables and check them as directed.</p>
+
+    <p>Finally, assign two more <strong>bool</strong> variables and then use their values to decide what additional output should be sent to the console.</p>
+</div>
+<div class="exercise-hint">
+    <p>Your predicted value for <strong>is_python_broken</strong> should be either True or False.</p>
+
+    <p>You should still be able to &quot;run the code in your head&quot; to predict the counter values, but note that <strong>age</strong> gets incremented in the middle of the code (which forces us to update our <strong>Booleans</strong>).</p>
+
+    <p>Each of two assignments you make at the end of the program should have a short conditional expression on the right-hand side of the assignment (=) operator.</p>
+</div>

@@ -1,0 +1,41 @@
+<div class="exercise-title">Using Lists as arrays</div>
+<div class="exercise-content">
+    <p>Most programming languages support an <strong>array</strong> data type to store sequences of elements that are <em>homogenous</em> (i.e., the elements all share the same data type), and where the <em>number of elements is fixed</em> (unless/until the array is reallocated to a different location in memory). Those two restrictions make arrays more efficient for large, complex processing where performance becomes important. <em>Replacing</em> array elements is supported, since it&#39;s easy to do so when each is exactly the same size, but you typically use a separate <strong>list</strong> data type instead when you need to <em>add</em>, <em>remove</em> or <em>insert</em> elements.</p>
+
+    <p>Although Python does have a separate <strong>array</strong> data type to take advantage of such efficiencies, it&#39;s not built into the language itself, but is included among the &quot;standard Python library&quot;modules (more on libraries later). Most Python programmers simply use <strong>Lists</strong> (or even Tuples) for the types of programming tasks usually reserved for arrays.</p>
+
+    <p>In one sense, doing so follows an important doctrine of software <em>optimization</em>:</p>
+
+    <p>1) Get your software working properly.<br>
+2) Use tools to <em>measure</em> the amount of time spent executing each line of code.<br>
+3) Optimize (only) that time-sensitive code.</p>
+
+    <p>Donald Knuth, perhaps the most important pioneer of Computer Science (born 1938 and happily still with us) wrote:</p>
+
+    <p>&quot;We should forget about small efficiencies, say about 97% of the time: premature optimization is the root of all evil. Yet we should not pass up our opportunities in that critical 3%.&quot;</p>
+
+    <p>Trying to make every algorithm (or even line of code) in your program as efficient as possible is counter-productive, because there is typically a tradeoff between efficiency and simplicity. More efficient code is generally more difficult for humans to read, understand and modify (without introducing new bugs).</p>
+
+    <p>That said, it is arguably better programming style to make clear <em>whether</em> a particular algorithm assumes that its sequence of elements is <em>homogenous</em> and remains <em>fixed in length</em>. Using separate array and list data types for different types of algorithms clarifies such assumptions in the code, arguably improving the readability of that code for humans.</p>
+
+    <p>Again, Python&#39;s use of <strong>Lists</strong> for tasks normally reserved for arrays is in keeping with &quot;duck typing&quot;. If and when the List type proves too slow, it is a relatively simple task to replace it with a Python <strong>Array</strong>, because Python uses array syntax when storing and retrieving elements in a List.</p>
+
+    <p>In this exercise, we&#39;ll practice using this array syntax to store and retrieve <strong>List</strong> elements.</p>
+</div>
+<div class="exercise-instructions">
+    <p>First, predict what the string representation of the <strong>scores</strong> List looks like after it gets sorted with higher scores appearing first.</p>
+
+    <p>Next, re-sort both the <strong>players</strong> and <strong>scores</strong> Lists so that <strong>lower</strong> scores (and associated players) appear first in each List.</p>
+
+    <p>Once you have them re-sorted, predict the string representation of <strong>scores</strong> after doing so.</p>
+
+    <p>Finally, sort both <strong>players_copy</strong> and <strong>scores_copy</strong> so that <strong>higher</strong> scores (and associated players) appear first in each List, but make sure you do so in a <strong>different</strong> way than was done for players and scores the first time.</p>
+</div>
+<div class="exercise-hint">
+    <p>In order to exchange List elements, you need to use a separate variable to hold the value of at least one of them. For example, the following code <em>won&#39;t</em> exchange the two elements, because the first statement loses access to what was originally in players[0]. Instead, it results in a copy of the other element in <em>both</em> locations.</p>
+
+    <pre><code>
+players[0] = players[3]
+players[3] = players[0]
+    </code></pre>
+</div>

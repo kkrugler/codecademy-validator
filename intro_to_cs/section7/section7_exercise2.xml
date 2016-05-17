@@ -1,0 +1,41 @@
+<div class="exercise-title">The for statement</div>
+<div class="exercise-content">
+    <p>It&#39;s often convenient to perform some operation on each element of a sequence (e.g., the characters in a <strong>String</strong> or the objects in a <strong>Tuple</strong> or <strong>List</strong>). Python&#39;s <strong>for</strong>/<strong>in</strong> structures provide a <em>control variable</em> that gives you access to each such element in turn. For example, the following code would send all the letters of the alphabet to the console, one on each line:</p>
+
+    <pre><code>
+alphabet = &#39;abcdefghijklmnopqrstuvwxyz&#39;
+for letter in alphabet:
+    print letter
+    </code></pre>
+
+    <p>The <strong>for</strong>/<strong>in</strong> structure above defines the <em>control variable</em> <strong>letter</strong>, which gets assigned to each element of <strong>alphabet</strong> in turn. The single print statement gets executed once for each iteration of the loop with that value in <strong>letter</strong>.</p>
+
+    <p>Sometimes it can be useful if the control variable is an index, so that it can be used to retrieve (or even modify) associated elements from more than one sequence. The handy <strong>range</strong>(num_elements) built-in function will generate a List of consecutive Integers to use for such indexes (beginning with zero). For example, the following statement would send &quot;[0, 1, 2, 3, 4]&quot; to the console:</p>
+
+    <p><code>print range(5)</code></p>
+
+    <p>The following code sends a message containing both the player and his/her score to the console, and uses both the <strong>range</strong>() and <strong>len</strong>() built-in functions in its <strong>for</strong>/<strong>in</strong> structure to do so:</p>
+
+    <pre><code>
+players = [&#39;Sally&#39;, &#39;Jane&#39;, &#39;Dave&#39;]
+scores = [7, 6, 5]
+for i in range(len(players)):
+    print &#39;%s scored %d&#39; % (player[i], score[i])
+    </code></pre>
+
+    <p>In this exercise, we&#39;ll practice using both types of <strong>for</strong>/<strong>in</strong> iteration structures.</p>
+</div>
+<div class="exercise-instructions">
+    <p>First, predict the values of the <strong>num_rooms</strong> and <strong>room_a</strong> variables by setting the associated prediction variables, as directed.</p>
+
+    <p>Next, predict the value of the <strong>room</strong> variable, as directed.</p>
+
+    <p>Next, add a line to the second loop so that it announces the winner and score properly.</p>
+
+    <p>Finally, add lines to the third loop so that it also sorts the <strong>players</strong> List properly, as directed.</p>
+</div>
+<div class="exercise-hint">
+    <p>The code in this example is relatively complex. Invest time studying the existing code so that you will understand how to modify it.</p>
+
+    <p>The modifications you make to the two loops should follow the patterns set by the code that references and modifies the <strong>scores</strong> List. Make sure you understand how that code works, and then try to follow the same pattern with the <strong>players</strong> List.</p>
+</div>

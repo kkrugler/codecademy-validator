@@ -1,0 +1,54 @@
+<div class="exercise-title">Array indexing</div>
+<div class="exercise-content">
+    <p>All programming languages can treat strings as <em>arrays</em> of characters. This makes it easy to retrieve individual characters or even <em>substrings</em> from a string, by referring to character <em>positions</em> via their <em>indexes</em>.</p>
+
+    <h4>Character position zero</h4>
+
+    <p>The first thing to get used to is the fact that it&#39;s just more convenient to refer to the <em>first</em> character in a string using index <em>zero</em>, instead of index one. This is a mistake you&#39;re going to make over and over again, so it bears some focus right at the beginning. For example, the following code prints the letter &quot;O&quot; to the console:</p>
+
+    <pre><code>
+my_string = &#39;One is the loneliest number.&#39;
+print my_string[0]
+    </code></pre>
+
+    <p>By the way, most other programming languages have a separate built-in data type for a single character, and you get one of those whenever you retrieve a character from a string by index. In contrast, Python returns a full-fledged <strong>String</strong> of length 1.</p>
+
+    <h4>Slicing</h4>
+
+    <p>This square bracket array-indexing syntax is very common among computer languages, but Python extends this syntax to support <em>slices</em>. For example, the following code prints the <em>substring</em> &quot;One&quot; to the console:</p>
+
+    <pre><code>
+my_string = &#39;One is the loneliest number.&#39;
+print my_string[0:3]
+    </code></pre>
+
+    <p>Note that the second statement tells Python to make a new String from the characters of the <strong>my_string</strong> variable between position 0 (which is right before its first character) and position 3 (which is just between the &quot;e&quot; and the space that follows it), and then to print that new 3-character String to the console. Referring to a substring using this [<em>start</em>:<em>end</em>] position syntax is called <em>slicing</em> a <em>sequence</em> in Python.</p>
+
+    <p>As long as you include the colon (:), you can even omit the start position or the end position. If you omit the start position, Python begins the slice at the start of the String. If you omit the end position, Python extends the slice to the end of the String.</p>
+
+    <h4>Remain in bounds</h4>
+
+    <p>When indexing arrays, it&#39;s easy to make a mistake (or, more commonly, fail to anticipate a possibility), and this can result in an attempt to read an element beyond the length of the array. Some programming languages such a C actually allow you to do that kind of thing, and you&#39;ll typically get whatever random data happens to be stored immediately <em>after</em> your array.</p>
+
+    <p>Python (like most modern programming languages) spends the extra effort required to &quot;bounds check&quot; character positions from your String indexing and slicing. However, it is very strict about indexing and very lenient about slicing.</p>
+
+    <p>If you try to retrieve a character from a String by index, that index <em>must</em> be less than the length of the String or you will get an <strong>IndexError</strong>. Unless you do something special to protect your code, this will normally terminate your program as soon as it happens. Thus, it&#39;s important to avoid trying to retrieve a nonexistent character by index.</p>
+
+    <p>In contrast, Python will just return the portion (if any) of your String that <em>overlaps</em> the start and end positions specified in your slice. If there&#39;s no overlap, Python just returns the <em>empty</em> String (i.e., the String whose length is zero).</p>
+</div>
+<div class="exercise-instructions">
+    <p>Make predictions as directed for the results of indexing and slicing <strong>my_string</strong> to produce various substrings.</p>
+
+    <p>Next, make predictions about the length of the empty String and whether it is equal to None.</p>
+
+    <p>Finally, try to predict the print statement with the index or slice that will generate an IndexError if uncommented.</p>
+</div>
+<div class="exercise-hint">
+    <p>Character <em>positions</em> actually fall <em>between</em> characters; a character itself doesn&#39;t technically have a position.</p>
+
+    <p>An index returns the character immediately after this position in the String.</p>
+
+    <p>The position just before the first character has index zero and the position just after the last character in the String has index len(my_string).</p>
+
+    <p>Slices don&#39;t generate IndexError; if there are no characters between the start position and the end position, then the empty String is returned.</p>
+</div>

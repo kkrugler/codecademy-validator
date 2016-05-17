@@ -1,0 +1,4 @@
+<div class="section-title">Expressions</div>
+<div class="section-overview">
+    <p>Mathematical expressions are so familiar from arithmetic and algebra that we just went ahead and started using the simplest ones in our code. In this section we will consider a number of ways that less familiar (e.g., Boolean) expressions can be leveraged to improve both the efficiency and readability of computer software.</p>
+</div>

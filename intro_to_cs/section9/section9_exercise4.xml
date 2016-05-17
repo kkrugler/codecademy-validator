@@ -1,0 +1,61 @@
+<div class="exercise-title">Optional parameters</div>
+<div class="exercise-content">
+    <p>Versatile functions often support <em>multiple</em> signatures, so that the caller can further customize their behavior by providing <em>extra</em> (or even <em>alternate</em>) parameters (a practice referred to as <em>function overloading</em>). Most of these special parameters are used infrequently, so making them <em>optional</em> allows function invocations to be as simple as possible.</p>
+
+    <p>For example, back in exercise 20 we described the <strong>String</strong> data type&#39;s <strong>find</strong>() method as if it took only one parameter: the <strong>substring</strong> to look for. However, this method also includes two <em>optional</em> parameters. The first optional parameter (<strong>start_pos</strong>) specifies the character position after which the search should begin. There is a second optional parameter (<strong>end_pos</strong>) that specifies the position at which to terminate the search. Thus, it&#39;s possible to search for the <strong>substring</strong> within only a <em>portion</em> of the original String. For example, all of the following <strong>find</strong>() method invocations would return the same value (10):</p>
+
+    <pre><code>
+my_string = &quot;Scot Schneider&quot;
+match_pos = my_string.find(&quot;id&quot;)
+match_pos = my_string.find(&quot;id&quot;, 0)
+match_pos = my_string.find(&quot;id&quot;, 2)
+match_pos = my_string.find(&quot;id&quot;, 0, 14)
+match_pos = my_string.find(&quot;id&quot;, 10, 12)
+match_pos = my_string[10:12].find(&quot;id&quot;)
+    </code></pre>
+
+    <p>Note that the following <strong>find</strong>() method invocation would return 5 (rather than 0):</p>
+
+    <pre><code>
+my_string = &quot;Scot Schneider&quot;
+match_pos = my_string(&quot;Sc&quot;, 1)
+    </code></pre>
+
+    <p>Crucially, the two optional parameters supported by the <strong>find</strong>() method are assigned to <em>default</em> values (<strong>0</strong> and <strong>len(my_string)</strong>, respectively) when the caller does <strong>not</strong> provide those arguments in the function invocation.</p>
+
+    <p>Any optional parameters supported by a Python function definition are specified by providing such a <em>default</em> value for each in the function signature. For example, the following function definition will compute the area of a rectangle, given its length and width. However, if the caller doesn&#39;t specify the width, it assumes that the rectangle is a square:</p>
+
+    <pre><code>
+def area(length, width=None):
+    if (width == None):
+        width = length
+    return (length * width)
+
+rectangle_area = area(3, 5) # returns 15
+square_area = area(7) # returns 49
+    </code></pre>
+
+    <p>Note that when <strong>width</strong> is not provided, its default value is None. However, because of the way that this value is <em>interpreted</em> within the function definition, a more meaningful description for the default value of <strong>width</strong> might be &quot;whatever the caller passes in <strong>length</strong>&quot;.</p>
+
+    <p>We could have chosen to provide completely separate functions for computing the areas of rectangles vs. squares. However, for more complex functions this would typically require one or more large sections of the function definitions to be duplicated. Code duplication should be avoided whenever possible, because any changes, bug fixes, etc. must be carefully applied to all such duplicated sections. Code duplication can sometimes be resolved by moving the shared block of code into a separate function which is then called from each original function (a process known as <em>refactoring</em> the code). However, even when this is <em>possible</em>, optional parameters will often provide a more elegant solution.</p>
+
+    <p>Since the function parameters are assigned to the caller&#39;s argument values using their <em>order</em> within the function signature, any <strong>optional</strong> parameters must typically appear <em>after</em> all of the <strong>required</strong> parameters. This also forces the caller to explicitly specify the first optional parameter in order to override the default value for the second optional parameter, etc. (Please take some time to review the previous two sentences carefully to ensure that you understand why these requirements are necessary.)</p>
+
+    <p>Although Python&#39;s <strong>keyword parameters</strong> provide a way around this restriction on positional parameters, they aren&#39;t available for built-in functions/methods. (Keyword parameters also expose the parameter <em>names</em> as part of the function signature, preventing them from ever being renamed without breaking any code that makes use of them.)</p>
+</div>
+<div class="exercise-instructions">
+    <p>First, predict the result of the four <strong>warn</strong>() function invocations, as directed.</p>
+
+    <p>Next, modify the signature of the <strong>warn</strong>() function definition at the top of the file so that its <strong>first</strong> invocation would return the same String <em>without</em> requiring the <strong>location</strong> argument to be specified (but <strong>don&#39;t</strong> modify the first invocation yet). Your changes should <strong>not</strong> affect the behavior of <strong>warn</strong>() for <em>any</em> of the four invocations. Click the <strong>Save &amp; Submit Code</strong> button to check your modifications.</p>
+
+    <p>Next, simplify as many invocations of <strong>warn</strong>() as possible <em>without</em> changing the String each produces, and check your modified invocations by clicking the <strong>Save &amp; Submit Code</strong> button.</p>
+
+    <p>Next, modify the signature of the <strong>warn</strong>() function definition so that its <strong>first</strong> invocation would return the same String <em>without</em> requiring <strong>any</strong> arguments to be specified (but <strong>don&#39;t</strong> modify the first invocation yet). Your changes should <strong>not</strong> affect the behavior of <strong>warn</strong>() for <em>any</em> of the four invocations. Click the <strong>Save &amp; Submit Code</strong> button to check your modifications.</p>
+
+    <p>Finally, simplify as many invocations of <strong>warn</strong>() as possible <em>without</em> changing the String each produces, and check your modified invocations by clicking the <strong>Save &amp; Submit Code</strong> button. </p>
+</div>
+<div class="exercise-hint">
+    <p>If you&#39;re having trouble predicting the results of the invocations, then note that the <strong>warn</strong>() function just builds a warning String from the parameters passed to it, using a template String. The only tricky part is that the caller doesn&#39;t have to pass a <strong>when</strong> argument at all. In that case, the function just avoids any mention of when <strong>activity</strong> is prohibited. The <strong>when_part</strong> local variable just helps to avoid having an extra space before the exclamation point in that case. The <strong>inserted</strong> local variable is just a Tuple that avoids making the last line of the function definition really long.</p>
+
+    <p>Note that you can&#39;t remove the <strong>location</strong> argument from the fourth invocation, because that one still needs to pass a special <strong>when</strong> argument. Since parameters are matched to arguments by position, you can&#39;t skip an argument if you need to pass one that comes after it.</p>
+</div>

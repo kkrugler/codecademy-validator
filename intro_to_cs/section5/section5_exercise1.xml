@@ -1,0 +1,44 @@
+<div class="exercise-title">More String literals</div>
+<div class="exercise-content">
+    <p>As mentioned previously, <strong>String</strong> literals can be delimited using either single (&#39;) or double (&quot;) quotation marks. The convention in Python is to use single quotation marks unless you need to use an apostrophe (or single quotes) <em>within</em> your String literal. For example:</p>
+
+    <p><code>print &quot;Simon&#39;s name has 5 letters.&quot;</code></p>
+
+    <p>It&#39;s easy to include double quotes within a string delimited by single quotes. For example:</p>
+
+    <p><code>print &#39;His name was &quot;Simon&quot;.&#39;</code></p>
+
+    <p>Like most other languages, Python supports an escape character (\) to defeat the <em>special</em> meaning of the character immediately following it. For example, it prevents the single quote character from terminating a String delimited with single quotes:</p>
+
+    <p><code>print &#39;Simon\&#39;s name has 5 letters.&#39;</code></p>
+
+    <p>The escape character can also defeat the carriage return at the end of a line, allowing you to break your String up across multiple physical lines. Python will just remove the escape character <em>and the return</em>, joining them back together as if there were no breaks at all. In this mode, it&#39;s called the <em>line continuation character</em>. For example, the following print statement sends &quot;This is just one line.&quot; to the console:</p>
+
+    <pre><code>
+print &#39;This \
+is just \
+one line.&#39;
+    </code></pre>
+
+    <p>If you want to <em>include</em> the line breaks in your output then use triple-&#39; or triple-&quot; syntax. For example, the following print statement actually sends <em>three</em> lines to the console (and the apostrophe <em>doesn&#39;t</em> confuse Python):</p>
+
+    <pre><code>
+print &#39;&#39;&#39;It&#39;s nice
+to have
+three lines.&#39;&#39;&#39;
+    </code></pre>
+</div>
+<div class="exercise-instructions">
+    <p>First, pay attention to how an apostrophe within a single-quoted String literal confuses Python, then practice both ways of resolving the problem.</p>
+
+    <p>Try breaking a String literal up into pieces with the line continuation character so that Python stitches it back together.</p>
+
+    <p>Next, force Python to include those breaks in your String literal.</p>
+
+    <p>Finally, how would you tell Python to include a <em>literal</em> backslash character within the console output?</p>
+</div>
+<div class="exercise-hint">
+    <p>Once you begin a String literal with a quotation mark, the next matching quotation mark Python encounters will terminate the String (unless it&#39;s escaped).</p>
+
+    <p>The escape character defeats the <em>special</em> meaning of the character that follows it. For example, it will prevent a quotation mark from terminating the String, and it will cause Python to &quot;ignore&quot; the end of a line, effectively stitching two physical lines together as if there was no break between them.</p>
+</div>

@@ -1,0 +1,74 @@
+<div class="exercise-title">Boolean operators</div>
+<div class="exercise-content">
+    <p>We introduced the <strong>Boolean</strong> data type soon after we started building <strong>if</strong>/<strong>elif</strong>/<strong>else</strong> conditional structures. As you recall, this data type can only hold one of two literal values: <strong>True</strong> or <strong>False</strong>, and each of the arithmetic comparisons in our conditional structures returned such a value.</p>
+
+    <p>There are also a few operators designed to operate <em>on</em> Boolean values, the basis of a relatively simple, yet powerful branch of mathematics known as <em>Boolean algebra</em>. Happily, all three of these operators will be quite familiar to you, because they&#39;re just a formalization of the simple logic we encounter every day.</p>
+
+    <p>The first operator is <strong>and</strong> (formally known as a <em>conjunction</em> in Boolean algebra), which returns True whenever <em>both</em> of the two values it operates on are True. (Whereas if at least one of those two values is False, the <strong>and</strong> operator instead returns False.) Note how this operator is used in the following conditional structure to congratulate the winner, but only if the <strong>score</strong> reaches 5 before <strong>time</strong> reaches 10:</p>
+
+    <pre><code>
+if ((score &gt;= 5) and (time &lt; 10)):
+    print &#39;Congratulations, you won!&#39;
+    </code></pre>
+
+    <p>The two Boolean <em>sub-expressions</em> above must <em>both</em> be True for this conditional structure to send output to the console. For example, if <strong>score</strong> is 4, and <strong>time</strong> is 1, then no output would be produced.</p>
+
+    <p>Note that the code above could also have been implemented by nesting another conditional structure within the first, but that form would obviously be less elegant:</p>
+
+    <pre><code>
+if (score &gt;= 5):
+    if (time &lt; 10):
+        print &#39;Congratulations, you won!&#39;
+    </code></pre>
+
+    <p>The second operator is <strong>or</strong> (formally known as a <em>disjunction</em> in Boolean algebra), which returns True whenever <em>at least one</em> of the two values it operates on is True. (Whereas if <em>both</em> of those two values are False, the <strong>or</strong> operator instead returns False.) Note how this operator is used in the following conditional structure to announce the end of the game, when either the <strong>score</strong> reaches 5 or the <strong>time</strong> reaches 10:</p>
+
+    <pre><code>
+if ((score &gt;= 5) or (time &gt;= 10)):
+    print &#39;Game over.&#39;
+    </code></pre>
+
+    <p>This conditional structure will send output to the console if <em>either</em> of its two Boolean <em>sub-expressions</em> is True. For example, if <strong>score</strong> is 4, and <strong>time</strong> is 10, then it would send &quot;Game over.&quot; to the console.</p>
+
+    <p>Note that the code above could also have been implemented by adding a second conditional structure, but that form is obviously less elegant:</p>
+
+    <pre><code>
+is_over = False
+if (score &gt;= 5):
+    is_over = True
+if (time &gt;= 10):
+    is_over = True
+if (is_over):
+    print &quot;Game over.&quot;
+    </code></pre>
+
+    <p>The final Boolean operator is <strong>not</strong> (formally known as a <em>negation</em> in Boolean algebra), a <em>prefix</em> operator that returns True when the value following it is False, and False when that value is True. It&#39;s uncommon to apply <strong>not</strong> directly to the result of an arithmetic comparison, since it&#39;s easier (and clearer) to simply choose the opposite arithmetic operator. For example, the following two statements are equivalent:</p>
+
+    <pre><code>
+is_adult = (not (age &lt; 21))
+is_adult = (age &gt;= 21)
+    </code></pre>
+
+    <p>However, <strong>not</strong> can be handy when used with a function that returns a Boolean value. For example, the following code sends a message to the console whenever the String variable <strong>winner</strong> doesn&#39;t begin with &quot;Chris&quot;:</p>
+
+    <pre><code>
+if (not (winner.startswith(&#39;Chris&#39;)):
+    print &quot;I can&#39;t believe Chris didn&#39;t win!&quot;
+    </code></pre>
+</div>
+<div class="exercise-instructions">
+    <p>First, predict the result of the four expressions that use the <strong>and</strong> operator, as directed.</p>
+
+    <p>Next, predict the result of the four expressions that use the <strong>or</strong> operator, as directed.</p>
+
+    <p>Next, modify the definitions of the four <strong>is_not_</strong>...() functions so that they no longer use the <strong>not</strong> operator, as directed.</p>
+
+    <p>Finally, modify the <strong>is_clear_winner</strong>() function definition to use a <em>single</em> conditional structure, as directed.</p>
+</div>
+<div class="exercise-hint">
+    <p>Even simple Boolean expressions can easily trip you up when they include a <strong>not</strong> operator (or the function is defined to return True whenever something else is False). It can be helpful to solve the <em>opposite</em> case first, then think about how to simplify your solution as you <em>negate</em> it (i.e., so that it returns True instead of False and vice-versa).</p>
+
+    <p>It can also help to simplify the function name in your head (but please <strong>do not</strong> change it in the code!) For example, note that &quot;is not less than four&quot; has precisely the same logical meaning as &quot;is greater than  or equal to four&quot;.</p>
+
+    <p>Extra for experts: Note that the <strong>is_clear_winner</strong>() function definition can actually be implemented without <strong>any</strong> conditional structures (i.e., by returning the result of an expression).</p>
+</div>

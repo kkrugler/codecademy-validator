@@ -1,0 +1,53 @@
+<div class="exercise-title">The break and continue statements</div>
+<div class="exercise-content">
+    <p>Both the <strong>while</strong> and <strong>for</strong> statements clearly specify the conditions under which the block of statements will be (re-)executed vs. terminating iteration and continuing with subsequent code. However, exceptional situations sometimes arise <em>within</em> the repeated block of statements that are difficult or awkward to anticipate before executing at least some of those statements. Most programming languages incorporate special case constructs to deal with these situations, but they should be seen as such (rather than part of the standard iteration tool set).</p>
+
+    <h3>The break statement</h3>
+
+    <p>A <strong>break</strong> immediately terminates iteration, and the computer continues execution from the first (non-indented) statement following the <strong>while</strong> or <strong>for</strong>/<strong>in</strong> loop structure.</p>
+
+    <p>For example, the following code would search through the <strong>players</strong> List for &quot;Bob&quot;, immediately break out of the loop when finding him, and then describe his score in the console, using the value of the control variable <strong>i</strong> when the loop was prematurely terminated:</p>
+
+    <pre><code>
+players = [&#39;Jane&#39;, &#39;Bob&#39;, &#39;Sally&#39;, &#39;Dave&#39;]
+scores = [6, 2, 7, 5]
+for i in range(len(players)):
+    if (players[i] == &#39;Bob&#39;):
+        break
+print &#39;%s scored %d.&#39; % (players[i], scores[i])
+    </code></pre>
+
+    <p>The same thing <em>could</em> be accomplished by moving the print statement into the conditional block within the loop. However, that might result in multiple score announcements (i.e., if there was more than one &quot;Bob&quot; in players). Even if &quot;Bob&quot; is guaranteed to be unique among <strong>players</strong>, continuing through the rest of those elements is certainly a waste of time. Indenting the print statement 8 more spaces would also appear less elegant (as would saving Bob&#39;s index in a separate variable). In this case, the efficiency of using <strong>break</strong> is arguably coupled with an <em>increase</em> in clarity, if not elegance.</p>
+
+    <h3>The continue statement</h3>
+
+    <p>A <strong>continue</strong> skips the remainder of the repeated block of statements, but the loop continues with the next iteration (if any).</p>
+
+    <p>For example, the following code would compute the average score excluding Bob&#39;s, by skipping the rest of the repeated statements for this player (but executing all of them for every other player):</p>
+
+    <pre><code>
+total_score = 0.0
+num_scores = 0
+for i in range(len(players)):
+    if (players[i] == &#39;Bob&#39;):
+        continue
+    total_score = total_score + scores[i]
+    num_scores = num_scores + 1
+average = total_score / num_scores
+print &#39;The average score was %.1f.&#39; % average
+    </code></pre>
+
+    <p>Again, this <em>could</em> have been accomplished by moving the <strong>total_score</strong> and <strong>num_scores</strong> assignment statements into the conditional section. However, as the number of such statements increases, keeping them all indented so far would probably make the code harder for humans to read.</p>
+
+    <p>The justifications made above for using <strong>break</strong> and <strong>continue</strong> statements are easily countered. Looping structures are among the most challenging for humans to read, interpret and &quot;execute in the head&quot;, even when it&#39;s clear that the entire repeated block will get executed for every element in the sequence. The introduction of special case execution paths obviously makes looping structures more complex, as the code in this exercise will hopefully illustrate.</p>
+</div>
+<div class="exercise-instructions">
+    <p>First, predict the values of the two variables after the first loop terminates, by setting the prediction variables as directed.</p>
+
+    <p>Next, do the same for the second loop.</p>
+
+    <p>Finally, do the same for the third loop.</p>
+</div>
+<div class="exercise-hint">
+    <p>It helps to write down the values of the two variables on a piece of paper and keep updating their values on the paper while you &quot;execute the loop in your head&quot;.</p>
+</div>

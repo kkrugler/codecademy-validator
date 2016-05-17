@@ -1,0 +1,30 @@
+<div class="exercise-title">Function signatures</div>
+<div class="exercise-content">
+    <p>We introduced <strong>functions</strong> fairly early on to make it easier for us to test the code we were writing against a range of possible input values. That alone speaks volumes about their utility, but in this section we will deepen our understanding of the central role functions play in software design.</p>
+
+    <p>The function <em>definition</em> is the smallest unit within a well-structured program. The first line of this definition, known as the <strong>signature</strong> names the function and describes a set of <em>parameters</em> that the function takes as input. Many programming languages also require that this signature specify the type of each parameter as well as the type of the single value returned by the function (Python makes neither requirement.) In addition, many languages require signatures to specify any exceptional conditions under which the function might abort its execution. In this way, the signature defines the <em>interface</em> to the function, which establishes the terms of a <em>contract</em> that exists between the caller and the function.</p>
+
+    <p>The caller <em>invokes</em> the function using its name, providing specific values (known as <em>arguments</em>) for each of the <em>parameters</em> expected by the function, and then specifying what to do with any value returned by the function.</p>
+
+    <p>Just before executing the first line of the function definition, the parameters in the function signature are bound to the arguments passed by the caller. These function parameters are special variables accessible only within the function definition (a property of an identifier known as its <strong>scope</strong>).</p>
+</div>
+<div class="exercise-instructions">
+    <p>First, predict the value of the <strong>score</strong> variable immediately after the <strong>inflate_score</strong>() function <em>definition</em> by assigning <strong>score_prediction_1</strong> as directed.</p>
+
+    <p>Next, predict the values of the <strong>score</strong> and <strong>inflated_score</strong> variables immediately after <em>invoking</em> the <strong>inflate_score</strong>() function, as directed.</p>
+
+    <p>Next, predict the values of the same two variables immediately after the <strong>calculate_inflation</strong>() function definition.</p>
+
+    <p>Then predict the values of the <strong>score</strong>, <strong>inflated_score</strong>, and <strong>inflation</strong> variables immediately after the first invocation of <strong>calculate_inflation</strong>().</p>
+
+    <p>Finally, predict the values of the same three variables after the second invocation of <strong>calculate_inflation</strong>().</p>
+</div>
+<div class="exercise-hint">
+    <p>It can be confusing to keep track of the values of variables when the same identifier is used for different variables. Keep in mind that:</p>
+
+    <p>1) The <strong>scope</strong> of a function parameter is limited to the function definition.</p>
+
+    <p>2) Each parameter is first assigned to the value of the argument passed by the caller when it invoked the function.</p>
+
+    <p>3) Generally, the only way to assign a new value to one of the caller&#39;s variables is if the caller chooses to use the single value returned by the function to make such an assignment itself.</p>
+</div>

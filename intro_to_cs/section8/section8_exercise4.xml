@@ -1,0 +1,97 @@
+<div class="exercise-title">Simplifying Boolean expressions</div>
+<div class="exercise-content">
+    <p>We saw in Exercise 28 that a Boolean expression can sometimes be simplified by removing the <strong>not</strong> operator and performing the <em>opposite</em> arithmetic comparison. For example, the following two conditional structures do the same thing (no matter what the value of <strong>score</strong> happens to be):</p>
+
+    <pre><code>
+if (not (score &lt; 5)):
+    print &#39;You won!&#39;
+
+if (score &gt;= 5):
+    print &#39;You won!&#39;
+    </code></pre>
+
+    <p>If the conditional structure includes an <strong>else</strong> case, then the <strong>not</strong> can be eliminated by exchanging the <strong>if</strong> and <strong>else</strong> cases. For example, the following two conditional structures are also equivalent:</p>
+
+    <pre><code>
+if (not (score &lt; 5)):
+    print &#39;You won!&#39;
+else:
+    print &#39;You lost.&#39;
+
+if (score &lt; 5):
+    print &#39;You lost.&#39;
+else:
+    print &#39;You won!&#39;
+    </code></pre>
+
+    <p>There is also an interesting and useful pair of transformations that can be applied to slightly more complex Boolean expressions. These laws are named after Augustus De Morgan (1806-1871), because he formalized them to become part of Boolean algebra. However, they&#39;re arguably an obvious consequence of the application of formal logic. In fact, these ideas were apparently understood by Greek logicians, including Aristotle (384-322 BC). </p>
+
+    <p>Each law in the pair links the three Boolean operators we&#39;ve learned (<strong>and</strong>, <strong>or</strong> and <strong>not</strong>), and the two laws have a beautiful symmetry.</p>
+
+    <p>Suppose that <strong>A</strong> and <strong>B</strong> are both Boolean variables, then both of the following expressions are guaranteed to be True (no matter what values <strong>A</strong> and <strong>B</strong> have):</p>
+
+    <pre><code>
+(not (A and B)) == ((not A) or (not B))
+(not (A or B)) == ((not A) and (not B))
+    </code></pre>
+
+    <p>In (somewhat) plain language, the first law states that if you know that <strong>A</strong> and <strong>B</strong> aren&#39;t <em>both</em> True, then <em>either</em> <strong>A</strong> or <strong>B</strong> must be False. This fact can be used to simplify the following conditional expression:</p>
+
+    <pre><code>
+if (not ((score &gt;= 5) and (time &lt; 10))):
+    print &#39;You lost!&#39;
+    </code></pre>
+
+    <p>First, let&#39;s apply De Morgan&#39;s first law without making any other changes:</p>
+
+    <pre><code>
+if ((not (score &gt;= 5)) or (not (time &lt; 10))):
+    print &#39;You lost!&#39;
+    </code></pre>
+
+    <p>Finally, we can remove the two <strong>not</strong> operators by choosing the opposite arithmetic comparisons:</p>
+
+    <pre><code>
+if ((score &lt; 5) or (time &gt;= 10)):
+    print &#39;You lost!&#39;
+    </code></pre>
+
+<p>Again in plain language, De Morgan&#39;s second law states that if you know that <em>neither</em> <strong>A</strong> nor <strong>B</strong> is True, then <em>both</em> <strong>A</strong> and <strong>B</strong> must be False. This fact can be used to simplify the opposite conditional expression:</p>
+
+    <pre><code>
+if (not ((score &lt; 5) or (time &gt;= 10))):
+    print &#39;You won!&#39;
+    </code></pre>
+
+    <p>First, let&#39;s apply De Morgan&#39;s second law without making any other changes:</p>
+
+    <pre><code>
+if ((not (score &lt; 5)) and (not (time &gt;= 10))):
+    print &#39;You won!&#39;
+    </code></pre>
+
+    <p>Finally, we can remove the two <strong>not</strong> operators by choosing the opposite arithmetic comparisons:</p>
+
+    <pre><code>
+if ((score &gt;= 5) and (time &lt; 10)):
+    print &#39;You won!&#39;
+    </code></pre>
+</div>
+<div class="exercise-instructions">
+    <p>First, simplify the expression within the <strong>is_winner</strong>() function, test the modified function yourself, and then signal the SCT to do so, as directed.</p>
+
+    <p>Next, perform a similar procedure with the <strong>is_mediocre</strong>() function, as directed.</p>
+
+    <p>Then simplify the <strong>encourage_chris</strong>() function by modifying both its expression and conditional structure, test it yourself, and then signal the SCT to do so, as directed.</p>
+
+    <p>Next, review the example illustrating the consequence of the associative property of the <strong>and</strong> operator for De Morgan&#39;s first law.</p>
+
+    <p>Finally, use the associativity of the <strong>or</strong> operator to modify the definition of <strong>function_6</strong>() as directed.</p>
+</div>
+<div class="exercise-hint">
+    <p>When simplifying the <strong>is_winner</strong>() and <strong>is_mediocre</strong>() functions, you can remove the <strong>not</strong> operator if you also choose the <em>opposite</em> comparison operator. For example, replace &quot;&lt;&quot; with &quot;&gt;=&quot;.</p>
+
+    <p>When simplifying the <strong>encourage_chris</strong>() function, you need to apply De Morgan&#39;s first law and then exchange the <strong>if</strong> and <strong>else</strong> clauses to remove the <strong>not</strong> operator that this introduces.</p>
+
+    <p>Finally, begin your <strong>function_6</strong>() with a copy of the expression from <strong>function_5</strong>(), then apply De Morgan&#39;s second law to it. </p>
+</div>
