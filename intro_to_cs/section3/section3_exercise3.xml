@@ -1,0 +1,42 @@
+<div class="exercise-title">Nesting conditional blocks</div>
+<div class="exercise-content">
+    <p>The winner announcement conditional structure you wrote in the previous exercise probably felt a little unsatisfying to you. It included a bias for one player if there was a tie, and that bias persisted even if the other player actually scored <em>more</em> (as long as the favored player also scored more than 5). Go back to the previous exercise (using the exercise selector control just to the right of the course name above), review the conditional structure you added, make sure you understand these issues, and then return to this exercise to continue reading.</p>
+
+    <p>There are several ways to address these limitations, but your next attempt will take advantage of the fact that conditional structures can be nested within conditional structures, as in the following example:</p>
+
+    <pre><code>
+if (age &gt; 20):
+    print(&#39;Get a job!&#39;)
+    if (address == parents_address):
+        print(&#39;Move out or pay rent!&#39;)
+elif (age &lt; 1):
+    print(&#39;So cute!&#39;)
+elif (age &lt; 5):
+    print(&#39;Try not to drool so much.&#39;)
+else:
+    print(&#39;Stay in school.&#39;)
+print(&#39;Remember to eat.&#39;)
+    </code></pre>
+
+    <p>Note that we added two lines of code that print out an additional line, but only for potentially freeloading young adults (i.e., those whose age is greater than 20 <strong>and</strong> who share an address with their parents - there&#39;s that <em>double</em> equals sign again for the equality test). The address conditional will not even be checked if age is less than 21.</p>
+
+    <h4>Proper indentation is essential</h4>
+
+    <p>Note carefully the indentation of each line of code above. For example, the <strong>print</strong> statement we added here is indented 8 spaces, because it&#39;s part of the code block that executes only if (age &gt; 20) and then also (address == parents_address). The <strong>elif</strong> on the following line isn&#39;t part of the conditional structure we added, but rather the <em>outer</em> structure, so it (and the second <strong>elif</strong> and the <strong>else</strong>) all continue to line up with the <em>outer</em> <strong>if</strong>.</p>
+
+    <p>You can nest conditional structures within an <strong>elif</strong> clause or an <strong>else</strong> clause too. You can even nest conditionals within <em>nested conditionals</em>. However, the readability of your code suffers as your conditional structures become more and more complex. In fact, we&#39;ll soon be considering other approaches that limit the amount of indentation a human is forced to keep track of as s/he tries to make sense of your code.</p>
+</div>
+<div class="exercise-instructions">
+    <p>Make predictions about the player scores after the first conditional structure, record them using the assignment statements that follow it, and then click the <strong>Save &amp; Submit</strong> button to check them.</p>
+
+    <p>Repeat this process for the next three conditional structures.</p>
+
+    <p>Finally, modify the announcement conditional structure so that it can announce ties, etc.</p>
+</div>
+<div class="exercise-hint">
+    <p>The <strong>if</strong> clause of the <em>outer</em> conditional structure should contain a nested conditional structure that determines the relationship between Bob and Sally&#39;s scores (since we know Jane can&#39;t be the winner in this case). There are three cases to consider: Bob winning, Sally winning, and a tie between Bob and Sally.</p>
+
+    <p>The two <strong>elif</strong> clauses of the <em>outer</em> conditional structure should also contain nested conditional structures, and they should use the same form as the one in the <em>outer</em> <strong>if</strong> clause. However, in each case you will be comparing a different pair of player scores (and announcing different outcomes).</p>
+
+    <p>Your conditional structure should be very symmetrical.</p>
+</div>

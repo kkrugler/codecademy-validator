@@ -1,0 +1,18 @@
+<div class="exercise-title">Statements and comments</div>
+<div class="exercise-content">
+    <p>A program in a text-based programming language like Python is a series of <em>statements</em>, typically one per line. The computer executes one statement at a time until the program terminates in some way (or pauses to wait for something like input from the user). For example, each line in the code to the right that begins with the word &quot;print&quot; is a statement. Blank lines are typically ignored by Python (though there are exceptions to this rule).</p>
+
+    <p>You probably noticed that some of the text in the code window from the previous exercise was just helping to introduce and clarify various parts of the program. Text like this doesn&#39;t affect how the computer runs the program; it&#39;s just there to help humans understand the code. Programmers refer to such text as &quot;comments&quot;.</p>
+
+    <p>All computer languages have special ways to identify comments so that the computer can ignore them and focus on trying to execute the program statements.</p>
+
+    <p>In Python, you begin comments with the hash symbol (#), and several examples are shown to the right.</p>
+</div>
+<div class="exercise-instructions">
+    <p>Add a short comment to the end of line 5 and another to the end of line 18. Also add a multi-line comment after the final statement in the program.</p>
+</div>
+<div class="exercise-hint">
+    <p>By a multi-line comment, I mean a comment that extends over multiple separate physical lines, not a single line that gets &quot;wrapped&quot; due to the limited width of the editing window. A wrapped line (like the long comment that contains the text &quot;...this line is much longer...&quot;) is still a single <em>physical</em> line.</p>
+
+    <p>Note that there are already several other multi-line comments in the program (e.g., the first one). Pay close attention to how these are formatted and try to reproduce that with the comment you add after the final statement of the program.</p>
+</div>

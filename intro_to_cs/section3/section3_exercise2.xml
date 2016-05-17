@@ -1,0 +1,42 @@
+<div class="exercise-title">Full if/elif/else structures</div>
+<div class="exercise-content">
+    <p>Sometimes you need to execute some statements if a condition is met, but otherwise execute some other statements (before returning to statements that should be executed in either case).</p>
+
+    <p>The <strong>else</strong> clause of a conditional statement specifies the set of statements to execute only when the condition is <strong>not</strong> true. For example, the following code either prints &quot;Get a job!&quot; or &quot;Stay in school.&quot; (depending on the value of age), but it always prints &quot;Remember to eat.&quot;</p>
+
+    <pre><code>
+if (age &gt; 20):
+    print(&#39;Get a job!&#39;)
+else:
+    print(&#39;Stay in school.&#39;)
+print(&#39;Remember to eat.&#39;)
+    </code></pre>
+
+    <p>It&#39;s also possible to hook together a series of conditional tests, where only the <em>first true condition</em> (if any) will execute its code block, but the rest will be skipped. You can choose to include an <strong>else</strong> clause as well (for when no conditions are true) or just skip it. The second and subsequent conditions are introduced with <strong>elif</strong> (which stands for &quot;else if&quot;). For example, the following code always prints exactly two lines (depending on the value of age), where the second line is always &quot;Remember to eat.&quot;</p>
+
+    <pre><code>
+if (age &gt; 20):
+    print(&#39;Get a job!&#39;)
+elif (age &lt; 1):
+    print(&#39;So cute!&#39;)
+elif (age &lt; 5):
+    print(&#39;Try not to drool so much.&#39;)
+else:
+    print(&#39;Stay in school.&#39;)
+print(&#39;Remember to eat.&#39;)
+    </code></pre>
+
+    <p>Notice that the statement(s) in each conditional block are all indented, whereas the <strong>if</strong> &amp; <strong>elif</strong> conditions and the <strong>else</strong> label are not. Again, this would be good style in any programming language, but you&#39;ll typically get an <strong>IndentationError</strong> from Python (or your code just won&#39;t do the right thing) unless your statements are indented properly. Finally, notice how there is a colon immediately preceding each block of conditional statements.</p>
+</div>
+<div class="exercise-instructions">
+    <p>Make predictions about the player scores after the first if/elif/else block, record them using the assignment statements that follow the block, and then click the <strong>Save &amp; Submit</strong> button to check them.</p>
+
+    <p>Repeat this process for the next three if/elif/else blocks.</p>
+
+    <p>Finally, construct and test your own if/elif/else block for announcing the winner.</p>
+</div>
+<div class="exercise-hint">
+    <p>Again, run the first section of the program &quot;in your head&quot; while you search for the first true condition. Note that even if several conditions <em>would</em> have been true, only the <em>first</em> true condition will execute its conditional statement block.</p>
+
+    <p>When writing your conditional structure for reporting scores, the winner should be the player who has more than 4 points (i.e., at least 5 points). If more than one player has at least 5 points, then your code will naturally have a bias for one player (even if the other player actually has a higher score). This isn&#39;t really fair, but it&#39;s the best you can do without a more complicated implementation (e.g., nested conditional sections).</p>
+</div>

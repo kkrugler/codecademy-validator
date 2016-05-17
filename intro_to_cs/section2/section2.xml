@@ -1,0 +1,4 @@
+<div class="section-title">Variables and assignments</div>
+<div class="section-overview">
+    <p>A computer is different from a player piano because it can be programmed to implement an algorithm rather than simply following a recipe. Having somewhere to store intermediate results is a fundamental requirement for information processing. In this section we will learn how Python stores data in and retrieves data from simple variables.</p>
+</div>

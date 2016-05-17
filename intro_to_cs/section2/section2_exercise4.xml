@@ -1,0 +1,38 @@
+<div class="exercise-title">String formatting</div>
+<div class="exercise-content">
+    <p>Building messages to the user via concatenation tends to become rather tedious.  It&#39;s often more convenient to use Python&#39;s String formatting syntax to do so.</p>
+
+    <p>The following statement uses the <strong>formatting operator</strong> (%) to stick &quot;world&quot; into the place in the message that is marked with the special placeholder %s, so it prints &quot;Hello, world!&quot;</p>
+
+    <p><code>print &quot;Hello, %s!&quot; % &quot;world&quot;</code></p>
+
+    <p>This formatting syntax takes some getting used to, so let&#39;s break that statement down into parts, and then consider each separately:</p>
+
+    <ol>
+        <li>You begin with a &quot;template&quot; String containing a special placeholder (%s in this case) to show Python where you want something else to be inserted.</li>
+        <li>Next, you use Python&#39;s formatting operator (%) to tell it you want to do some formatting.</li>
+        <li>Finally, you specify the thing you&#39;re trying to insert (&quot;world&quot; in this case).</li>
+    </ol>
+
+    <p>The formatting operator can also insert several different values into various places within your template String, each one marked with its own placeholder. The syntax in this case makes use of a collection of values called a <strong>Tuple</strong>. The values in the Tuple are surrounded by parentheses and separated by commas. (More on Tuples later.)</p>
+
+    <pre><code>
+first_name = &#39;Ken&#39;
+occupation = &#39;programmer&#39;
+print &#39;%s is a good %s.&#39; % (first_name, occupation)
+    </code></pre>
+</div>
+<div class="exercise-instructions">
+    <p>First, use the formatting operator (%) to print the simple message suggested in the code.</p>
+
+    <p>Next, use % to format a new variable and then use % a second time to print the message suggested at the end of the code.</p>
+</div>
+<div class="exercise-hint">
+    <p>You need a placeholder (%s) in your String tempate for each thing you&#39;re trying to insert. Don&#39;t forget the &quot;s&quot; in your placeholders!</p>
+
+    <p>You should use exactly <strong>one</strong> formatting operator in each statement (for this simple exercise). It <strong>doesn&#39;t</strong> have an &quot;s&quot;.</p>
+
+    <p>Make sure that neither your formatting operator nor your variables are surrounded by quotes, or they&#39;ll just become part of that String literal.</p>
+
+    <p>Again, pay attention to the color that the code window uses to display each character!</p>
+</div>

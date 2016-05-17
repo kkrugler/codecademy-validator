@@ -1,0 +1,26 @@
+<div class="exercise-title">Identifying variables by name</div>
+<div class="exercise-content">
+    <p>Programming languages store data in elements called <strong>variables</strong> (because their contents can change). <strong>Variables</strong> also provide a layer of <em>abstraction</em> (another fundamental Computer Science concept), just as variables do in Algebra. Here, <em>abstraction</em> means manipulating symbols without worrying so much about their contents.</p>
+
+    <p>Unlike the single-letter variables commonly used in Algebra (e.g., &quot;x&quot;), most computer languages allow variables to have longer, more meaningful names such as &quot;count&quot; and &quot;maximum_value&quot;.</p>
+
+    <p>Variable names, like the other built-in names we&#39;ve already seen in Python (e.g, the name of the <strong>print</strong> statement), are known as <em>identifiers</em>. Each programming language limits the set of characters that can be used in an identifier (and therefore a variable name), an important part of the language syntax.</p>
+
+    <p>A Python identifier must begin with a letter (A to Z or a to z) or an underscore symbol (_) followed by zero or more letters, underscores, and digits (0-9). Identifiers are also <em>case-sensitive</em>, meaning that the identifiers &quot;count&quot; and &quot;Count&quot; would refer to two <em>completely different variables</em> with no special relationship (other than a likelihood for human confusion).</p>
+
+    <p>Finally, Python needs to reserve a few identifiers for the language itself (e.g., the <strong>print</strong> statement). Therefore, an attempt to define any of the official <a href="http://en.wikipedia.org/wiki/Python_syntax_and_semantics#Keywords">Python keywords</a> as a variable is bound to fail.</p>
+</div>
+<div class="exercise-instructions">
+    <p>First, fix the error in the first print statement.</p>
+
+    <p>Next, make sure all of the variables in the code are using legal identifier names.</p>
+
+    <p>Finally, use your understanding of variables and assignment statements to predict the value that this program will send to the console.</p>
+</div>
+<div class="exercise-hint">
+    <p>The first print statement didn&#39;t use exactly the same name as the variable appearing in the assignment statement before it.</p>
+
+    <p>Both of the non-fruity variables use invalid characters in their names. The invalid character in the second one would be fine as long as it wasn&#39;t the very first character of the name.</p>
+
+    <p>The <strong>num_citrus_fruit</strong> variable wasn&#39;t increased when we added one to <strong>num_oranges</strong>, so it still has the value it had when it was first assigned (i.e., the original value of <strong>num_oranges</strong>).</p>
+</div>

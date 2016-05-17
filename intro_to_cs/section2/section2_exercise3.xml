@@ -1,0 +1,34 @@
+<div class="exercise-title">String concatenation</div>
+<div class="exercise-content">
+    <p>One cool thing you can do with <strong>Strings</strong> is concatenate them together to make longer Strings. Python, like several other languages, uses the plus sign (+) to sort of &quot;add&quot; them together. When used in this way, it&#39;s called the <strong>concatenation operator</strong>. For example, the following statement would assign the value &quot;heartwarming&quot; to the variable emotion:</p>
+
+    <p><code>emotion = &#39;heart&#39; + &#39;warming&#39;</code></p>
+
+    <h4>What&#39;s with those quotes?</h4>
+
+    <p>You may have noticed that <em>single</em> quotation marks were used in the example above. Python doesn&#39;t care whether you use &quot;double quotes&quot; or &#39;single quotes&#39; as long as you use the <em>same</em> type at the beginning and end of each String. The convention in Python programming circles is to use single quotes unless you need to include an apostrophe within your String, as in the following:</p>
+
+    <p><code>print &quot;It&#39;s alive!&quot;</code></p>
+
+    <h4>Embedding variables</h4>
+
+    <p>Although it is possible to embed the <em>value</em> of a variable within text displayed to the user, simply including the variable name in your String will <strong>not</strong> do so. How would Python know whether you want to output the <em>name</em> of the variable or the <em>value</em> of that variable?</p>
+
+    <p>A note on terminology: The String <em>values</em> that appear directly within your code (like &quot;heart&quot; and &quot;warming&quot; above) are known as String <strong>literals</strong>. (Note that we&#39;ve already seen Integer literals as well.)</p>
+
+    <p>In order for Python to distinguish them from Python identifiers, etc. String literals must be surrounded by quotation marks. In contrast, the variable getting assigned and any variables you&#39;re concatenating together must <strong>not</strong> be quoted.</p>
+</div>
+<div class="exercise-instructions">
+    <p>Try to fix the assignment to <strong>formal_name</strong> so that it uses the concatenation operator to build the full name properly.</p>
+
+    <p>Next, fix the second print statement so that it uses the concatenation operator to include the <em>value</em> of the <strong>formal_name</strong> variable in the message it is sending to the console.</p>
+</div>
+<div class="exercise-hint">
+    <p>You need a plus sign (+) in between each pair of Strings in your concatenation.</p>
+
+    <p>Make sure that neither your plus signs nor your variables are surrounded by quotes, or they&#39;ll just become part of that String literal.</p>
+
+    <p>Make sure that each String literal <strong>is</strong> surrounded by its own set of quotes. </p>
+
+    <p>Finally, pay attention to the color that the code window uses to display each character - that&#39;s a <strong>very</strong> useful hint about where you might have gone wrong!</p>
+</div>

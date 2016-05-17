@@ -1,0 +1,45 @@
+<div class="exercise-title">Conditional code blocks</div>
+<div class="exercise-content">
+    <p>All programming languages have conditional statements. The simplest case is where you want to execute a single statement only when a particular condition is true. For example, the following statement displays a person&#39;s age only if he or she is at least 21 years old:</p>
+
+    <pre><code>
+if (age &gt; 20):
+    print &#39;%s is %s years old.&#39; % (name, age)
+    </code></pre>
+
+    <p>In this case, if the person was 21 or older (and the <strong>name</strong> and <strong>age</strong> variables had been assigned properly earlier in the program), it would print out a message like &quot;Jane is 25 years old.&quot; However, if the person was 20 or younger, it wouldn&#39;t print anything at all.</p>
+
+    <p>The syntax of conditional statements is fairly simple. However, they&#39;re easier to read and understand than they are to write. Again, let&#39;s break the example down into parts and consider each separately:</p>
+
+    <ol>
+        <li>The statement begins with the word <strong>if</strong>.</li>
+        <li>The next thing is the condition, which in our example was &quot;(age &gt; 20)&quot;. The computer must test whether the condition is true before it knows what it should do next.</li>
+        <li>The next thing is a colon (:) which separates the condition from the statement that is dependent on that condition.</li>
+        <li>Finally, you have the condition-dependent statement, a print statement in this case.</li>
+    </ol>
+
+    <p>Note that the <strong>print</strong> statement above is indented 4 spaces. Indenting conditional statements is a common <em>convention</em> when writing code in most languages, because it clarifies the control flow for humans who are reading and modifying the code. However, in Python, indentation is more than a convention; <em>it&#39;s the law!</em> Indentation is how Python itself knows which statements are dependent on the condition.</p>
+
+    <p>Python&#39;s indentation requirement is a little easier to understand when more than one statement is dependent on the condition, as in the following example:</p>
+
+    <pre><code>
+if (age &gt; 20):
+    print &#39;%s is %s years old.&#39; % (name, age)
+    print &#39;%s should get a job.&#39; % name
+print &#39;%s will be hungry eventually&#39; % name
+    </code></pre>
+</div>
+<div class="exercise-instructions">
+    <p>Read the program to the right (including comments), thinking carefully about which conditions will be true, and therefore which conditional statements will execute (vs. getting skipped).</p>
+
+<p>Read the program over a second time to predict the values of the two counter values near the end of this program.</p>
+
+<p>Finally, add two conditional statements to the end of the program, as suggested in the comments.</p>
+</div>
+<div class="exercise-hint">
+    <p>Run the program &quot;in your head&quot; while you count the number of <strong>if</strong> conditions that are actually true on your fingers. Replace the zero in the <strong>true_condition_count_prediction</strong> assignment statement at the end of the program with your total.</p>
+
+    <p>Use the same procedure to count print statements that will execute and put your prediction into <strong>printed_line_count_prediction</strong>, but don&#39;t forget the ones that would always execute no matter whether the conditions were true or false.</p>
+
+    <p>Once you&#39;ve correctly predicted these values, refer to the step by step breakdown of the conditional statement syntax description above as you write your own conditional statements.</p>
+</div>

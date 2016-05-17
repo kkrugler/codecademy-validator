@@ -1,0 +1,14 @@
+<div class="exercise-title">One typo can ruin your whole program</div>
+<div class="exercise-content">
+    <p>Python is a text-based programming language, which means that you have to type your code in from the keyboard, rather than using a drag and drop graphical user interface.</p>
+
+    <p>Unfortunately, text-based programming languages are even pickier than your English teacher about how you write. A single misspelling, missing space or other typo will typically prevent your program from working at all. As we begin writing code, we need to pay attention to each character that we type.</p>
+</div>
+<div class="exercise-instructions">
+    <p>The program to the right has a small typographical error. First, just click the <strong>Save &amp; Submit Code</strong> button to see what happens without making any changes. You&#39;ll get a cryptic error message from Python in the output window at the far right, plus a hint about what went wrong below the code.</p>
+
+    <p>Next, try to find and correct the error, then click the <strong>Save &amp; Submit Code</strong> button again to see if you fixed the problem.</p>
+</div>
+<div class="exercise-hint">
+    <p>There needs to be exactly one double quotation mark at the very beginning and at the very end of each thing you&#39;re trying to print to the user. Click the <strong>Reset Code</strong> button to start over, and then carefully compare the use of quotation marks in the first print statement to their use in the second print statement.</p>
+</div>

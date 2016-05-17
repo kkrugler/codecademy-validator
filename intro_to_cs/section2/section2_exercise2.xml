@@ -1,0 +1,18 @@
+<div class="exercise-title">Duck Typing</div>
+<div class="exercise-content">
+    <p>So far we&#39;ve just been using variables to store and retrieve <strong>Integers</strong>, but programs need to manipulate many other kinds of data as well (such as the text we&#39;ve been sending to the console). This exercise introduces the <strong>String</strong> data type.</p>
+
+    <p>Languages like Java and C++ use <a href="http://en.wikipedia.org/wiki/Strong_and_weak_typing">strong typing</a>, meaning that the type of each variable must be <em>declared</em> before any value can be stored in it (though both can typically be accomplished in the same statement). Such languages require that any value assigned to a variable must match that variable&#39;s type. This can help catch common programming errors even before the program starts running.</p>
+
+    <p>In contrast, Python chooses to maximize the freedom of the programmer, a philosophy referred to as <a href="http://en.wikipedia.org/wiki/Duck_typing">duck typing</a>. As long as the variables in a program behave as the code expects them to, that code need not worry about the type of data in those variables. &quot;If it walks like a duck, and it quacks like a duck, then we might as well treat it like a duck.&quot; Fans of strong typing would instead refer to Python&#39;s approach as &quot;weak typing&quot;.</p>
+</div>
+<div class="exercise-instructions">
+    <p>First, read the program over and think about it.</p>
+
+    <p>Next (before making any changes), just click the <strong>Save and Submit</strong> button to see the type information displayed in the console, to check your prediction for the length of the original value of <strong>salutation</strong>, and to study the TypeError output. Note that the console is scrollable.</p>
+
+    <p>Finally, change the second assignment to the variable <strong>salutation</strong> so that last print statement in the program will display the number &quot;11&quot; in the console. Don&#39;t change any other lines in the program.</p>
+</div>
+<div class="exercise-hint">
+    <p>Come up with a <strong>String</strong> that will have the desired length and use that instead of the <strong>Integer</strong> on <a href="javascript:void(0)" class="line-no" data-from="37" data-to="">line 37</a>.</p>
+</div>

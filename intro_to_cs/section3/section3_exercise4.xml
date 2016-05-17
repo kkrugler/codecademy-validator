@@ -1,0 +1,73 @@
+<div class="exercise-title">A functional digression</div>
+<div class="exercise-content">
+    <p>Most useful computer programs are very large and extremely complex (sort of like this digression - <em>sorry</em>). This makes it difficult for any one programmer to hold <strong>all</strong> of the implementation details in his/her head at the same time. Well-designed software addresses this fundamental challenge via <strong>modularity</strong>, <strong>hierarchy</strong> and <strong>abstraction</strong>.</p>
+
+    <h4>Modularity</h4>
+
+    <p>If you break a program down into manageable pieces, then you can focus on each piece in turn, and it will be much easier to understand all the implementation details of that one module much more deeply.</p>
+
+    <h4>Hierarchy</h4>
+
+    <p>Well-designed modules can be used (and re-used) as tools by other modules, which can in turn, be used as tools by even more powerful modules. The main program sits at the top of this hierarchy, delegating the implementation details to the modules it interacts with directly, which then delegate to lower-level modules, etc.</p>
+
+    <h4>Abstraction</h4>
+
+    <p>When one module uses another module as a tool, the implementation details of the second module are hidden from the first module. Instead, the first module can focus on <strong>what</strong> it needs the second module to do, not <strong>how</strong> it actually gets done. This allows the second module to be rewritten (e.g., to improve performance or to add some new functionality) without needing to modify the first module at all.</p>
+
+    <p><strong>Functions</strong> (also known as procedures, methods, routines or subroutines) are the smallest such units of code. We&#39;re introducing them now in order to begin managing the complexity that is already creeping into our Python examples. More importantly, wrapping our code up into such units makes it easier to create very powerful automated <em>unit tests</em> for each function we write. Such unit tests give us more confidence that the code will behave properly in every situation, and they free us from laboriously checking every representative case by hand (and repeating this process every time we modify the code).</p>
+
+    <p>We will return to study functions in more detail later, but we&#39;re going to learn enough now to harness them for testing the code we write.</p>
+
+    <h4>Function definitions</h4>
+
+    <p>Functions are another grouping of program statements (like the <strong>if</strong> and <strong>else</strong> blocks in a conditional structure). However, each function has a <strong>name</strong> (an identifier like a variable name) that enables another part of the program to request that this block of statements be executed on its behalf, known as <em>invoking</em> or <em>calling</em> the function. Most functions also support one or more <strong>parameters</strong> that tailor the behavior of the function for the caller&#39;s <em>invocation</em>. The module calling the function (the <em>caller</em>) passes specific values in these parameters, which appear to the function as variables that were already assigned before it began executing its block of statements. Finally, most functions also <strong>return</strong> one value to the caller, the result of the function invocation. For example, here&#39;s a simple function that takes a numeric parameter (named &quot;factor&quot;) and returns the square of that number:</p>
+
+    <pre><code>
+def get_square(factor):
+    result = factor * factor
+    return result
+    </code></pre>
+
+    <p><strong>Note</strong>: Python, like many programming languages, uses the asterisk symbol (*) for its multiplication operator (instead of x or •).</p>
+
+    <p>Function definitions like the one above begin with the keyword <strong>def</strong>, followed by the name of the function, a list of parameters (surrounded by parentheses and separated by commas) and then a colon (:). The statements that are part of the function are indented like the ones in our conditional clauses. Any <strong>return</strong> statement encountered during execution will immediately terminate the function (skipping any statements in the function definition that follow) and will return that value to the caller.</p>
+
+    <h4>Calling functions</h4>
+
+    <p>Once such a function has been defined, it can be called from a later point in the code. For example, the following code would print &quot;64&quot;.</p>
+
+    <pre><code>
+side_length = 8
+area = get_square_area(side_length)
+print area
+    </code></pre>
+
+    <p>Note how the return value from the function can be assigned to one of the caller&#39;s variables.</p>
+
+    <h4>Multiple parameters</h4>
+
+    <p>Although a function can return only one  value, it can have any number of parameters. For example, the following function computes the volume of a rectangular solid:</p>
+
+    <pre><code>
+def get_volume(length, width, height):
+    return length * width * height
+    </code></pre>
+
+    <p>Given this definition of <strong>get_volume</strong>, code later in the program can then use it to compute a volume. For example, the following statement would print &quot;30&quot;:</p>
+
+    <p><code>print get_volume(3, 5, 2)</code></p>
+
+    <p>As in these two examples, the caller must provide all the parameters expected by the function with each invocation.</p>
+</div>
+<div class="exercise-instructions">
+    <p>First, predict the return values for a few simple function invocations by assigning the prediction variables.</p>
+
+    <p>Next, modify the definition of the function <strong>get_announcement</strong> so that it returns the announcement message, given the player scores passed in by its caller. Do so in the same way as you modified the conditional structure for the previous exercise, but instead of using <strong>print</strong> to output the message to the console, <strong>return</strong> that message to the caller (who will be responsible for printing it if necessary).</p>
+
+    <p>Next, test the <strong>get_announcement</strong> function in the same way you did before, by setting the values of the player variables to a few interesting cases.</p>
+
+    <p>Finally, set <strong>bob_score</strong> to 100. This will skip the invocation of <strong>get_announcement</strong>, but it will direct the Submission Correctness Test to call <strong>get_announcement</strong> directly with all seven score combinations to make sure it always returns an appropriate announcement String, no matter which player(s) have the highest score.</p>
+</div>
+<div class="exercise-hint">
+    <p>If the SCT finds that your function doesn&#39;t behave properly for a given set of scores, then run the code in your head with those scores to imagine what it <em>would</em> return and consider why. Again, leave the outer conditional structure as is, but try to focus on the three conditions to consider within the if and elif blocks.</p>
+</div>
