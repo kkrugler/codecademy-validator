@@ -1,0 +1,4 @@
+<div class="section-title">Basic IDE Debugging</div>
+<div class="section-overview">
+    <p>An Integrated Development Environment (IDE) provides powerful tools for software development. Although it's certainly possible to write programs with a simple text editor and debug them by adding statements to  periodically send output to the console, a well-integrated set of tools that have symbolic access to your code and its data structures greatly improves the efficiency of the software development process (and arguably, the reliability of the end product).</p>
+</div>

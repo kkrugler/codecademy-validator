@@ -1,0 +1,32 @@
+<div class="exercise-title">Single stepping through code</div>
+<div class="exercise-content">
+    <p>This Codecademy exercise assumes that you&#39;ve already followed the directions on the web page entitled <a href="http://www.bitneyprep.net/computer_science/pycharm-exercise-1/">PyCharm Exercise 1</a> and written down your answers to the 20 questions.</p>
+
+    <p>Here&#39;s a review of the PyCarm Debugger functionality covered during the exercise (most of which are items in the <strong>Run</strong> menu):</p>
+
+    <p><strong>Toggle Line Breakpoint</strong> - Places (or removes) a <strong>breakpoint</strong> on the line where the cursor is located. A breakpoint causes execution to pause just before this line is executed (which can happen more than once if the line is in the body of a loop or function definition).</p>
+
+    <p><strong>Run</strong> &#39;<em>game</em>&#39; - This command runs the program <em>without</em> pausing at any <strong>breakpoints</strong> you&#39;ve placed in the source code.</p>
+
+    <p><strong>Debug</strong> &#39;<em>game</em>&#39; - This command runs the program in &quot;debugging mode&quot;, so that execution pauses at any <strong>breakpoints</strong> encountered.</p>
+
+    <p><strong>Variables</strong> panel - Displays all the variables in the current <em>scope</em>, each with its current value. Those whose values have changed since the last time execution was paused appear in blue.</p>
+
+    <p><strong>Step Over</strong> - Execute the current line of code in its entirety (including all function and method calls) and then pause at the next line in the current execution context.</p>
+
+    <p><strong>Step Into</strong> - If the line where execution is paused includes a function or method invocation, allow the invocation to proceed, but pause at the first line of that function or method definition. (Otherwise, it&#39;s the same as <strong>Step Over</strong>.)</p>
+
+    <p><strong>Run to Cursor</strong> - Allow the program to continue executing until it reaches the line on which the cursor is located (or until it reaches a <strong>breakpoint</strong> elsewhere).</p>
+
+    <p><strong>Frames</strong> panel - Displays the &quot;calling stack&quot;, the path by which execution arrived at the current line of code (i.e., from the original main program through the function it called, through the function that function called, etc.) The stack is presented in reverse order, with the main program at the bottom and the current line of code at the top. Each element includes the line number where it invoked the function it called. (The bottom two lines are part of the PyCharm Python execution environment, so they&#39;re not really of interest.) Selecting a line causes all of the variables bound within the scope of that execution context to be displayed in the <strong>Variables</strong> panel.</p>
+</div>
+<div class="exercise-instructions">
+    <p>First, predict the values of the <strong>name</strong> and <strong>normalized_name</strong> variables, as directed.</p>
+
+    <p>Next, predict the values of the <strong>score</strong> and <strong>doubled_score</strong> variables, as directed.</p>
+
+    <p>Finally, predict the <em>string representations</em> of the <strong>player_info_1</strong> and <strong>player_info_2</strong> variables, as directed.</p>
+</div>
+<div class="exercise-hint">
+    <p>If one of your answers was wrong, you&#39;ll have to re-execute the code (following the instructions carefully) to get back to that point in the directions.</p>
+</div>
